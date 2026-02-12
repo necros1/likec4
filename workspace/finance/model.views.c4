@@ -1,0 +1,13 @@
+// views {
+//     view context of motorDeContactabilidad {
+//       // title 'Modelo C1 Sistema Motor de contactabilidad'
+//       title 'Enablers / Finance / Motor de contactabilidad / Producción / Nivel 1'
+//       include motorDeContactabilidad, analista,deudor,datalake,Sistema_de_correo
+//     }
+//     view ContactabilidadContainer of motorDeContactabilidad{
+//       title 'Enablers / Finance / Motor de contactabilidad / Producción / Nivel 2'
+//       include *, 
+//       -> deudor
+//     }
+
+// }

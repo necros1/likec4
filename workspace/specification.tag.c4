@@ -1,0 +1,24 @@
+specification {
+  relationship usesCapability
+  relationship usesApplication
+
+  tag Critical
+
+  tag finance
+  tag people
+  tag Vendor-Fullfilment-Inventory-Cost
+  tag Planning-Sourcing
+  tag post-purchase
+  tag purchase
+
+  tag Falabella-Chile
+  tag Falabella-Colombia
+  
+  tag Sodimac-Chile
+  tag Sodimac-Uruguay
+
+  tag deprecated {
+    color rgb(100 100 100)
+  }
+
+}

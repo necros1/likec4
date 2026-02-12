@@ -1,0 +1,485 @@
+//systems.essential.c4
+model {
+  relojbiometricoSpr = system {
+    #people #Sodimac-Chile #Sodimac-Uruguay #APP00306
+    title 'Reloj biométrico SPR'
+    description 'Sistema para control de asistencia'
+    metadata {
+      Lifecycle 'Retirar'
+      Codebase 'Build'
+      Delivery 'On-Site'
+    }
+    relojbiometricoSpr -[usesCapability]-> timeAndAttendance
+  }
+
+  saba = system 'Saba'{
+    #people
+    description '	Sistema de E-learning. Capacitaciones del Area de Gestión Humana para funcionarios del Banco'
+    metadata {
+      FAI 'APP00764'
+    }
+    saba -[usesCapability]-> learning
+  }
+
+  firmaElectronicaPersonalInterno = system 'Firma Electrónica Personal Interno'{
+    #people
+    description 'Sistema que incorpora la huella digital a los documentos legales y laborales de cada trabajador. El proceso de enrolamiento de huella se realiza en Falanet y queda asociada al Rut.'
+    metadata {
+      FAI 'APP01645'
+    }
+    firmaElectronicaPersonalInterno -[usesCapability]-> electronicSign
+  }
+
+  sapNomina = system 'SAP Nómina'{
+    #people
+    description 'SAP Payroll Module'
+    metadata {
+      FAI 'APP00166'
+    }
+    sapNomina -[usesCapability]-> payrollCapability
+  }
+
+  falanetApp = system 'Falanet (App)'{
+    #people
+    description 'App Interna para los empleados del grupo, en donde se pueden crear grupos y segmentar las publicaciones de noticias, comunicados, beneficios, conectar aplicaciones externas (responsive) ,buscar empleados, conectar chatbot, hacer la evaluacion de desempeño. Actualmente Falabella Retail Chile y Adessa pueden solicitar entradas de cine, utilizar las gift card electronicas de vestuario.'
+    metadata {
+      FAI 'APP00284'
+    }
+    falanetApp -[usesCapability]-> caseManagementPeople
+  }
+
+  relojesMarcadoresPe = system 'Relojes Marcadores PE'{
+    #people
+    description '	Permite registrar las marcas de los empleados.'
+    metadata {
+      FAI 'APP00307'
+    }
+    relojesMarcadoresPe -[usesCapability]-> timeAndAttendance
+  }
+
+  miFalabella = system 'Mi Falabella'{
+    #people
+    description 'ERM Application'
+    metadata {
+      FAI 'APP02588'
+    }
+    miFalabella -[usesCapability]-> erm
+  }
+
+  firmaElectronicabyFalabella = system 'Firma Electronica by Falabella'{
+    #people
+    description 'Firma electrónica para documentos'
+    metadata {
+      FAI 'APP03053'
+    }
+    firmaElectronicabyFalabella -[usesCapability]-> electronicSign
+  }
+
+  portalBeneficios = system 'Portal Beneficios'{
+    #people
+    description 'Beneficios transversales para los colaboradores, reporte de métricas.'
+    metadata {
+      FAI 'APP02779'
+    }
+    portalBeneficios -[usesCapability]-> benefits
+  }
+
+  payflow = system 'Payflow'{
+    #people
+    description 'Commision App Falabella Retail'
+    metadata {
+      FAI 'APP02593'
+    }
+    payflow -[usesCapability]-> payrollCapability
+  }
+
+  haciendoEscuela = system 'Haciendo Escuela'{
+    #people
+    description 'Portal de Voluntariado Falabella'
+    metadata {
+      FAI 'APP02592'
+    }
+    haciendoEscuela -[usesCapability]-> volunteerWork
+  }
+
+  qualtrics = system 'Qualtrics'{
+    #people
+    description 'Employee survey application'
+    metadata {
+      FAI 'APP02590'
+    }
+    qualtrics -[usesCapability]-> voiceOfEmployee
+
+  }
+
+  reconocimiento = system 'Reconocimiento'{
+    #people
+    description 'Plataforma que permite reconocer a todos los colaboradores de la compañía, según los valores de Falabella.'
+    metadata {
+      FAI 'APP02481'
+    }
+    reconocimiento -[usesCapability]-> recognition
+  }
+
+  vivaEngage = system 'Viva Engage'{
+    #people
+    description 'Aplicación Comunicaciones Corporativas'
+    metadata {
+      FAI 'APP02267'
+    }
+    //FALTA CAPACIDAD
+    // vivaEngage -[usesCapability]-> socialNetwork
+  }
+  
+  eSign = system 'eSign'{
+    #people
+    description 'Solución de Firma Digital'
+    metadata {
+      FAI 'APP02045'
+    }
+    eSign -[usesCapability]-> electronicSign
+  }
+  
+  portalEmpleados = system 'Portal Empleados'{
+    #people
+    description 'Solución rrhh para gestión de empleados'
+    metadata {
+      FAI 'APP02043'
+    }
+    portalEmpleados -[usesCapability]-> caseManagementPeople
+  }
+
+  degree = system 'Degree'{
+    #people
+    description '	Solución LMS (Learning Management System) para Learning'
+    metadata {
+      FAI 'APP01968'
+    }
+    degree -[usesCapability]-> learning
+  }
+  
+  wimper = system 'Wimper'{
+    #people
+    description 'Gestión del proceso y herramientas para ejecución de pagos de remuneraciones e incentivos. Es un servicio BPO'
+    metadata {
+      FAI 'APP01967'
+    }
+    wimper -[usesCapability]-> learning
+    wimper -[usesCapability]-> payrollCapability
+  }
+
+
+
+
+
+
+
+
+
+
+  
+  ubits = system 'Ubits'{
+    #people
+    description 'Plataforma de contenidos para capacitación empresarial'
+    metadata {
+      FAI 'APP01712'
+    }
+    ubits -[usesCapability]-> learning
+  }
+
+  muevete = system 'Muevete'{
+    #people
+    description 'Plataforma de convocatorias Internas para vacantes del Grupo Falabella.'
+    metadata {
+      FAI 'APP01217'
+    }
+    muevete -[usesCapability]-> attraction
+  }
+
+  trabajandoCom = system 'Trabajando.com'{
+    #people
+    description 'Plataforma de Evaluación de Desempeño'
+    metadata {
+      FAI 'APP00999'
+    }
+    trabajandoCom -[usesCapability]-> onBoarding
+  }
+
+  rankmi = system 'Rankmi'{
+    #people
+    description 'Plataforma de Evaluación de Desempeño'
+    metadata {
+      FAI 'APP00955'
+    }
+    rankmi -[usesCapability]-> performance
+  }
+
+  payroll = system 'payroll'{
+    #people
+    description 'Plataforma de gestión de empleados y pago de nóminas y gestión de tiempos de Adecco'
+    metadata {
+      FAI 'APP00934'
+      LifeCycle 'Deprecar'
+    }
+    payroll -[usesCapability]-> payrollCapability
+  }
+
+  getAbstract = system 'Get Abstract'{
+    #people
+    description 'Plataforma de conocimiento'
+    metadata {
+      FAI 'APP00909'
+    }
+    getAbstract -[usesCapability]-> learning
+  }
+
+  eClass = system 'e-Class'{
+    #people
+    description 'Sistema de e-Learning'
+    metadata {
+      FAI 'APP00904'
+    }
+    eClass -[usesCapability]-> learning
+  }
+
+  sysnel = system 'Sysnel'{
+    #people
+    description 'Sincroniza la marca de los relojes para enviar a SPR'
+    metadata {
+      FAI 'APP00863'
+      LifeCycle 'Deprecar'
+    }
+    sysnel -[usesCapability]-> timeAndAttendance
+  }
+  
+  nomiplus = system 'Nomiplus'{
+    #people
+    description 'Sistema de administraciòn de Nomina'
+    metadata {
+      FAI 'APP00698'
+      LifeCycle 'Mantener/Evolucionar'
+    }
+    nomiplus -[usesCapability]-> payrollCapability
+  }
+
+  sorianaRelojControl = system 'Soriana Reloj Control'{
+    #people
+    description 'Control de asistencia. Proviene de Soriana.'
+    metadata {
+      FAI 'APP00313'
+    }
+    sorianaRelojControl -[usesCapability]-> timeAndAttendance
+  }
+
+  moodle = system 'Moodle'{
+    #people
+    description 'Plataforma eLearning Brasil'
+    metadata {
+      FAI 'APP00301'
+    }
+    moodle -[usesCapability]-> learning
+  }
+
+  controlDeAsistencias = system 'Control de Asistencias - ASIS'{
+    #people
+    description 'Es un modulo que nació desde el Sistema de SPR, usado para Gestión de tiempo, cálculo de Horas extras Turnos y Asistencias o ausentismos.'
+    metadata {
+      FAI 'APP00286'
+      LifeCycle 'Retirar'
+    }
+    controlDeAsistencias -[usesCapability]-> timeAndAttendance
+  }
+
+  chatbotCorporativoBella = system 'Chatbot Corporativo BELLA'{
+    #people
+    description 'Chatbot Mesa Soporte de Personas'
+    metadata {
+      FAI 'APP02693'
+      LifeCycle 'Implementar'
+    }
+    chatbotCorporativoBella -[usesCapability]-> chatBotPeople
+  }
+
+  buk = system 'BUK'{
+    #people
+    description 'Learning Plattform'
+    metadata {
+      FAI 'APP02589'
+      LifeCycle 'Implementar'
+    }
+    buk -[usesCapability]-> learning
+  }
+  asistenteDeCalibracion = system 'Asistente de Calibración' {
+    #people
+    description 'Asistente de calibración de desempeño'
+    metadata {
+      FAI 'APP03163'
+    }
+    asistenteDeCalibracion -[usesCapability]-> performance
+  }
+  administracionCartera = system 'Administración de Cartera'{
+    #people
+    description 'Funcionalidad asociada a los convenios que el banco tiene con los funcionarios para los créditos que ellos toman con tasas preferentes, en donde se descuelgan o vinculan funcionarios.'
+    administracionCartera -[usesCapability]-> employeeMaster
+  }
+  datamace = system 'Datamace' {
+    #people
+    description 'Sistema de Recursos Humanos para la administración del personal y para el pago de remuneraciones'
+    datamace -[usesCapability]-> employeeMaster
+    datamace -[usesCapability]-> payrollCapability
+
+  }
+  datapino = system 'Datapino' {
+    #people
+    description 'Gestión de novedades y pago de nomina a empleados|Aplicación para Gestión de Nómina de las empresas del Grupo y pago a empleados. Proveedor Digidata'
+    datapino -[usesCapability]-> employeeMaster
+    datapino -[usesCapability]-> payrollCapability
+  }
+  diferencialEmpleadosCajasTottus = system 'Diferencial de Empleados para Cajas Tottus' {
+    #people
+    description 'aplicación que recolecta archivo de empleados de los negocios de falabella Perú y realiza un cruce de datos con el archivo de empleados del dia anterior, el resultado se arma en archivos .dat compatibles para cajas y es enviado por FTP a todas las cajas de las tiendas de Tottus.'
+    diferencialEmpleadosCajasTottus -[usesCapability]-> employeeMaster
+  }
+  intranetMiCasa = system 'Intranet Mi Casa' {
+    #people
+    description 'Reemplaza Intranet Corporativa Sodimac'
+    intranetMiCasa -[usesCapability]-> employeeMaster
+  }
+  ocupacionalSSO = system 'Ocupacional- SSO' {
+    #people
+    description 'Sistema de Gestión de Salud y Seguridad Ocupacional (SSO)'
+    ocupacionalSSO -[usesCapability]-> employeeMaster
+    ocupacionalSSO -[usesCapability]-> benefits
+  }
+  ofisisSmart = system 'Ofisis Smart' {
+    #people
+    description 'Plataforma de personal, remuneraciones y asistencia'
+    ofisisSmart -[usesCapability]-> employeeMaster
+    ofisisSmart -[usesCapability]-> timeAndAttendance
+    ofisisSmart -[usesCapability]-> payrollCapability
+  }
+  spr = system 'Personal y Remuneraciones - SPR' {
+    #people, #APP00314,#Critical
+    description 'Sistema de Personal y Remuneraciones.Evaluación Puestos Claves.Triple Pack (contratos/Renovación/Finiquito).Evaluación de desempeño. FMC Formulario de modificación Contractual . Adm y gestión del Personal. Remuneraciones. AutoConsulta.Vendedores a POS / descuento Institucional. Workflow de Vacaciones.'
+    spr -[usesCapability]-> employeeMaster
+  }
+  planillaEjecutivos = system 'Planilla Ejecutivos (Fox Pro)'{
+    #people
+    description 'Sistema de planilla de ejecutivos para Saga Falabella - Perú. Solo contempla nóminas. En tecnología Fox Pro con DBFs.. (pasa a pre-apagado)'
+    planillaEjecutivos -[usesCapability]-> employeeMaster
+  }
+  sprSaas = system 'Personal y Remuneraciones - SPR Saas' {
+    #people
+    description 'Sistema de Personal y Remuneraciones.Evaluación Puestos Claves.Triple Pack (contratos/Renovación/Finiquito).Evaluación de desempeño. FMC Formulario de modificación Contractual . Adm y gestión del Personal. Remuneraciones. AutoConsulta.Vendedores a POS / descuento Institucional. Workflow de Vacaciones.. Sistema tipo SaaS.'
+    sprSaas -[usesCapability]-> employeeMaster
+  }
+  nomina = system 'SAP_corp / SAP Nómina' {
+    #people
+    description 'Modulo SAP para gestión de recursos humanos. (En nuestra planificación seguirá vivo hasta 2028 al menos)'
+    nomina -[usesCapability]-> employeeMaster
+  }
+  sprWeb = system 'SPR-WEB' {
+    #people
+    description 'Desarrollos Java para aplicaciones de RRHH en el portal Falanet, especialmente conectado a la base de SPR, con lo que se han creado modulos de autoatención y workflow, desde solicitud de vacaiones, firma de documentos laborales, workflow de prestamos, informes de comisiones, formularios de modificación contractual, beneficios flexibles,'
+    sprWeb -[usesCapability]-> employeeMaster
+  }
+  empleadoCentral = system 'SAP SF Employee Central' {
+    #people, #APP00281
+    description 'Sistema de administración de personal (en la nube)Sistema de reclutamiento y selección, tanto interno como externoMódulo de perfil de la plataforma del grupo Falabella de SSFF'
+    
+    empleadoCentral -[usesCapability]-> organizationalDesign
+
+    empleadoCentral -[usesApplication]-> geoVictoria 
+    empleadoCentral -[usesApplication]-> spr
+    empleadoCentral -[usesApplication]-> employeeCentralPayroll
+    empleadoCentral -[usesApplication]-> aira
+  }
+  adobeSign = system 'Adobe Sign'{
+    #people
+    description 'Solución de Firma Digital'
+    metadata {
+      FAI 'APP02046'
+      LifeCycle 'Mantener/Evolucionar'
+    }
+    adobeSign -[usesCapability]-> documents
+  }
+
+  gestorDocumentosCorporativoHyland = system 'Gestor De Documentos Corporativo-Hyland' {
+    #people
+    description 'Document repository for contracts, attendance tickets'
+    gestorDocumentosCorporativoHyland -[usesCapability]-> documents
+  }
+
+  catalyst = system 'Catalyst' {
+    #APP00848,#purchase
+    -> ac 'uses'
+  }
+  saperp = system 'SAP ERP'{
+    #APP00201,#finance, #Critical
+    -> b2bf 'uses'
+  }
+  ac = system 'Accounting Gateway' {
+    #APP01781, #post-purchase
+    -> saperp 'uses'
+  }
+  fbc = system 'Falabella Business Center (FBC)' {
+    #APP02696, #Planning-Sourcing
+    -> vpf 'uses'
+    -> b2bf 'uses'
+  }
+  vpf = system 'Validador de Proveedores Falabella'{
+    #APP02284,#finance
+  }
+  b2bf = system 'Plataforma B2B financiero'{
+    #APP02282,#finance
+  }
+  btf = system 'Biller Falabella Trading'{
+    #APP02283,#finance
+    -> sli 'uses'
+    -> saperp 'uses'
+  }
+  xpc = system 'XPC'{
+    #APP00370, #Planning-Sourcing
+    -> btf 'uses'
+  }
+  sli = system 'SLI' {
+    #APP00476,#Vendor-Fullfilment-Inventory-Cost, #Critical
+  }
+
+  motorDeContactabilidad = system 'Motor de contactabilidad' {
+    #finance,#APP03092,#Falabella-Chile,#Falabella-Colombia
+    description '''
+      ###
+      [Confluence](https://confluence.falabella.tech/display/FPO/AGD+Motor+Contactabilidad+Inteligente+de+Casos+de+Cobro+a+Proveedores)
+    '''
+  }
+  geoVictoria = system 'GeoVictoria' { 
+      #people, #APP02485
+      description 'Asistencia Corporativa'
+      geoVictoria -[usesCapability]-> timeAndAttendance
+  }
+  
+  employeeCentralPayroll = system 'Employee Central Payroll' {  
+    #people
+    metadata {
+      FAI 'APP02594'
+    }
+    employeeCentralPayroll -[usesCapability]-> payrollCapability
+  }
+  aira = system 'Aira' { 
+    #people
+    description '''
+      Sistema de RRHH para el reclutamiento y selección de personal interno y externo a Falabella 
+      ###
+      [Page](https://falabella.airavirtual.com/recruiter/login)
+      [Confluence 1](https://confluence.falabella.com/pages/viewpage.action?pageId=142585500)
+      [Confluence 2](https://confluence.falabella.com/pages/viewpage.action?pageId=133226844)
+    '''
+    metadata {
+      FAI 'APP02021'
+      LifeCycle 'Implementar'
+    }
+    aira -[usesCapability]-> attraction
+  }
+
+}

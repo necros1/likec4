@@ -1,0 +1,71 @@
+// model {
+//     extend empleadoCentral {
+//         container Empleado_Central {
+//             technology 'SAP'
+//             style {
+//                 border dotted
+//             }
+//             component ApiMemp {
+//                 description 'Maestro de Empleado'
+//                     style {
+//                         icon tech:nodejs
+//                         size xsmall
+//                         color sky
+//                     }
+//             }
+//             component ApiDorg {
+//                 description 'Diseño Organizacional'
+//                     style {
+//                         icon tech:nodejs 
+//                         size xsmall
+//                         color sky
+//                     }
+//             }
+//             component HCI {
+//                 description 'Centro Integtraciones'
+//                     style {
+//                         color sky
+//                         size xsmall
+//                     }
+//             }
+//             component EventosEC {
+//                 description 'Eventos ABM'
+//                     style {
+//                         icon: gcp:pub-sub
+//                         color sky
+//                         shape queue
+//                         size xsmall
+                        
+//                     }
+//             }
+//             component MiGestion {
+//                 description 'Sitio web SAP'
+//                     style {
+//                         color sky
+//                         size xsmall
+//                         shape browser
+                        
+//                     }
+
+//             }
+//             component Extractores {
+//                 description 'Extractores Archivos SODPE'
+//                     style {
+//                         color sky
+//                         size xsmall
+//                         icon tech:nodejs
+//                     }
+
+//             }
+//         }
+//     }
+//     GW -> ApiMemp 'HTTPS/OAUTH2'
+//     GW -> ApiDorg 'HTTPS/OAUTH2'
+//     ApiMemp -> spr 'Personas [JODBC]'
+//     empleadoCentral -> employeeCentralPayroll 'Sync [P2P]'
+//     HCI -> File 'Archivos - Beneficios'
+//     Extractores -> Bucket 'Archivos Personas [NodeJS]'
+//     HCI -> GD 'Documentos [SFTP]'
+//     ApiMemp -> geoVictoria 'Ausentismos & Personas [REST]'
+//     aira -> GW 'Posiciones [REST]'
+// }

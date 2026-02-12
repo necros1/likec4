@@ -1,0 +1,194 @@
+//capability.essential.c4
+model {
+  enterpriseSupportTi = capabilityEnablers {
+    #people
+    title 'Enterprise Support TI'
+    metadata {
+      Parent 'Falabella Group'
+    }
+    enterpriseSupportTi -[usesCapability]-> contentServices
+
+  }
+  enterpriseSuppportPeople = capabilityEnablers{
+    #people
+    title 'Enterprise Suppport People'
+    metadata {
+      Parent 'Falabella Group' 
+    }
+    enterpriseSuppportPeople -[usesCapability]-> core
+    enterpriseSuppportPeople -[usesCapability]-> peopleAnalytics
+    enterpriseSuppportPeople -[usesCapability]-> compensations
+    enterpriseSuppportPeople -[usesCapability]-> ermGroup
+    enterpriseSuppportPeople -[usesCapability]-> talentManagementCommunications
+    enterpriseSuppportPeople -[usesCapability]-> sustainability
+  }
+  sustainability = capabilityEnablers{
+    title 'Sustainability'
+    metadata {
+      Parent 'Enterprise Suppport People'
+    }
+    sustainability -[usesCapability]-> volunteerWork
+  }
+
+  contentServices = capabilityEnablers {
+    title 'Content Services'
+    metadata{
+      Parent 'Enterprise Support TI'
+    }
+    contentServices -[usesCapability]-> electronicSign
+  }
+
+  talentManagementCommunications = capabilityEnablers {
+    title 'Talent Management & Communications'
+    metadata {
+      Parent 'Enterprise Suppport People'
+    }
+    talentManagementCommunications -[usesCapability]-> performance
+    talentManagementCommunications -[usesCapability]-> onBoarding
+    talentManagementCommunications -[usesCapability]-> attraction
+    talentManagementCommunications -[usesCapability]-> socialNetwork
+    talentManagementCommunications -[usesCapability]-> recognition
+    talentManagementCommunications -[usesCapability]-> learning
+  }
+  ermGroup = capabilityEnablers{
+    title 'ERM (Group)'
+    metadata {
+      Parent 'Enterprise Suppport People'
+    }
+    ermGroup -[usesCapability]-> caseManagementPeople
+    ermGroup -[usesCapability]-> chatBotPeople
+    ermGroup -[usesCapability]-> erm
+  }
+
+  compensations = capabilityEnablers {
+    title 'Compensations (Group)'
+    metadata {
+      Parent 'Enterprise Suppport People'
+    }
+    compensations -[usesCapability]-> benefits
+    compensations -[usesCapability]-> payrollCapability
+    compensations -[usesCapability]-> timeAndAttendance
+  }
+  peopleAnalytics = capabilityEnablers{
+    title 'People Analytics (Group)'
+    metadata {
+      Parent 'Enterprise Suppport People' 
+    }
+    peopleAnalytics -[usesCapability]-> voiceOfEmployee
+    // peopleAnalytics -[usesCapability]-> reporting
+    // peopleAnalytics -[usesCapability]-> data
+  }
+
+  core = capabilityEnablers{
+    title 'Core'
+    metadata {
+      Parent 'Enterprise Suppport People' 
+    }
+    core -[usesCapability]-> employeeMaster
+    core -[usesCapability]-> organizationalDesign
+    core -[usesCapability]-> documents
+  }
+
+  employeeMaster = capabilityEnablers {
+    #people
+    title 'Employee Master'
+    description '
+      Manage complete employee information. Includes services that provide self-care functionalities on the part of the employee.
+    '
+    metadata {
+      Domain 'Enterprise Support People'
+      Parent 'Core' 
+    }
+  }
+
+
+  documents = capabilityEnablers {
+    #people
+    title 'Documents'
+    description 'Manages the legal documents of the employees, such as contracts, contract annexes, etc.'
+    metadata {
+      Domain 'Enterprise Support People'
+      Parent 'Core' 
+    }
+  }
+
+  organizationalDesign = capabilityEnablers{
+    #people
+    title 'Organizational Design'
+    description 'Associated with the hierarchical relationship of the personnel. Identification of roles and functional profiles according to the position.'
+    metadata {
+      Domain 'Enterprise Support People'
+      Parent 'Core' 
+    }
+    // organizationalDesign -[usesApplication]-> empleadoCentral
+  }
+  voiceOfEmployee = capabilityEnablers{
+    #people
+    title 'Voice Of Employee'
+  }
+  // reporting = capabilityEnablers{
+  //   #people
+  //   title 'Reporting'
+  // }
+  // data = capabilityEnablers {
+  //   #people
+  //   title 'Data'
+  // }
+  benefits = capabilityEnablers {
+    #people
+    title 'Benefits'
+  }
+  caseManagementPeople = capabilityEnablers {
+    #people
+    title 'Case Management People'
+  }
+
+  performance = capabilityEnablers {
+    #people
+    title 'Performance'
+  }
+  onBoarding = capabilityEnablers {
+    #people
+    title 'On Boarding'
+  }
+  chatBotPeople = capabilityEnablers {
+    #people
+    title 'Chat Bot People'
+  }
+  attraction = capabilityEnablers {
+    #people
+    title 'Attraction'
+  }
+  socialNetwork = capabilityEnablers {
+    #people
+    title 'Social Network'
+  }
+  electronicSign = capabilityEnablers{
+    #people
+    title 'Electronic Sign'
+  }
+  volunteerWork = capabilityEnablers{
+    #people
+    title 'Volunteer Work'
+  }
+  recognition = capabilityEnablers{
+    #people
+    title 'Recognition'
+  }
+  erm = capabilityEnablers{
+    #people
+    title 'ERM'
+  }  
+  learning = capabilityEnablers{
+    #people
+    title 'Learning'
+  }
+  payrollCapability = capabilityEnablers{
+    #people
+    title 'Payroll'
+  }
+  timeAndAttendance = capabilityEnablers{
+    #people
+    title 'Time and Attendance'
+  }
+}

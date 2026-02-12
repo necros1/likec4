@@ -1,0 +1,54 @@
+model {
+    system linkedIn {
+        description 'Plataforma web para búsqueda de candidatos'
+        style {
+            color gray
+            size small
+        }
+        linkedIn -[usesCapability]-> attraction
+    }
+    system datalake {
+        description 'Finance Datalake' 
+        style {
+            color gray
+            size small
+        }
+    }
+
+    Sistema_de_correo = system 'Sistema de correo' {
+        description 'Sistema de correo (smtp, office 365)' 
+        style {
+            color gray
+            size small
+        }
+    }
+    GW = system 'Corporate APIGW'{
+        style {
+            color gray
+            size small
+        }
+    }
+    File = system 'Archivos Tottus' {
+        description 'Archivos CL&PE'
+            style {
+                color gray
+                size small
+            }
+    }
+    Bucket = system 'Archivos SODPE' {
+        description 'Archivos Satelites PE'
+            style {
+                color gray
+                shape storage
+                size small
+            }
+    }
+    GD = system 'OnBase' {
+        description 'Gestor Documental Corporativo'
+        technology 'SaaS'
+            style {
+                color gray
+                size small
+            }
+    }
+}

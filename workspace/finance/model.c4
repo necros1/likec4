@@ -1,0 +1,48 @@
+// model {
+//   analista = actor 'Analista' {
+//       description 'Analista CxC' 
+//   }
+
+//   deudor = actor 'Cliente deudor' {
+//       description 'Cliente CxC' 
+//   }
+//   extend motorDeContactabilidad {
+//       frontend = component 'Dashboard' {
+//         #deprecated
+//         icon tech:react
+//         technology 'React'
+//         description 'Dashboard de resultados'
+//       }
+//       bq = storage 'Email-BQ' {
+//           icon gcp:big-query
+//           technology 'Bigquery'
+//           description 'Historial de correos'
+//       }
+//       orchestador = component 'Orchestador'{
+//             icon gcp:cloud-run-for-anthos
+//           technology 'Agent Development Kit'
+//           description 'Orquestador de agentes'
+//       }
+//       email_sender = component 'Email-Sender'{
+//           icon tech:nodejs
+//           technology 'Node.js'
+//           description 'Servicio emisor de correos'
+//       }
+//       analista -> frontend 'Visualiza KPIs'
+//       frontend -> bq 'Lee y analiza datos'
+//       bq -> datalake 'Obtiene deuda'
+//       Sistema_de_correo -> deudor 'Entrega Correo'
+//       deudor -> Sistema_de_correo 'Envío respuesta'
+//       Sistema_de_correo -> orchestador 'Respuesta proveedor'
+//       orchestador -> bq 'Actualiza datos y decide envíos'
+//       orchestador -> email_sender 'Solicita envío de cobro/resultado'
+//       email_sender -> Sistema_de_correo 'Solicita envío de correo'
+    
+
+//   }
+//   analista -> motorDeContactabilidad 'Gestión, Monitorea y recibe alertas'
+//   motorDeContactabilidad -> datalake 'Consulta deuda 30,60, ó 90+ dias'
+//   motorDeContactabilidad -> Sistema_de_correo 'Envía notificaciones de cobro'
+//   Sistema_de_correo -> deudor 'Envía correo de cobro'
+
+// }

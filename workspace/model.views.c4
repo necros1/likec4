@@ -1,0 +1,96 @@
+//model.views.c4
+views {
+  view index {
+    
+      title "Ecosistema Falabella"
+
+      group 'Supply Chain'{
+        color green
+        opacity 20%
+        border solid
+        group 'Warehouse Management'{
+          
+        }
+      }
+
+      // group 'Loyalty'{
+      //   color amber
+      //   opacity 20%
+      //   border solid
+      //   group 'Loyalty (Portfolio)'{
+          
+      //   }
+      // }
+      // group 'Payments'{
+      //   color amber
+      //   opacity 20%
+      //   border solid
+      //   group 'Payments (Portfolio)'{
+          
+      //   }
+      // }
+
+      // group 'Banking'{
+      //   color amber
+      //   opacity 20%
+      //   border solid
+      //   group 'Banking (Portfolio)'{
+          
+      //   }
+      // }
+
+      group 'Stores and Merchandise'{
+        color red
+        opacity 20%
+        border solid
+        group 'Merchandising'{
+          // include vendorFullfilment, accountingEngine
+        }
+        group 'Store'{
+          group 'Customer & Business Experience'{
+          
+          }
+        }
+      }
+
+      
+
+      group 'Digital Commerce'{
+        color sky
+        opacity 20%
+        border solid
+        group 'Post Purchase'{
+          // include ac
+        }
+        group 'Purchase' {
+          // include catalyst
+        }
+      }
+      group 'Enablers' {
+        color gray
+        opacity 10%
+        border solid
+
+        group 'Finance' {
+          color gray
+          opacity 20%
+          border solid
+          // include MotorDeContactabilidad,btf,b2bf,vpf,saperp
+        }
+        group 'People' {
+          color gray
+          opacity 20%
+          border solid
+          include enterpriseSuppportPeople, enterpriseSupportTi
+        }
+      }
+      style * {
+        color primary
+      }
+      style element.tag = #Critical {
+        color red
+      }
+      
+
+  }
+}
