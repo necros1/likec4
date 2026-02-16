@@ -140,17 +140,17 @@ views {
       learning, payrollCapability
     }
 
-    // view contextEmpleadoCentral of empleadoCentral {
-    //   // title 'Modelo C1 Sistema Motor de contactabilidad'
-    //   title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 1'
-    //   include empleadoCentral,GW,spr,employeeCentralPayroll,
-    //   File, GD, geoVictoria, aira
-    // }
-    // view ContainerEmpleadoCentral of empleadoCentral{
-    //   title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 2'
-    //   include *,
-    //     -> HCI,ApiDorg, Extractores, ApiMemp,EventosEC,MiGestion
+    view contextEmpleadoCentral of empleadoCentral {
+      // title 'Modelo C1 Sistema Motor de contactabilidad'
+      title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 1'
+      include empleadoCentral,GW,spr,employeeCentralPayroll,
+      File, GD, geoVictoria, aira
+    }
+    view ContainerEmpleadoCentral of empleadoCentral{
+      title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 2'
+      include *,
+        -> HCI,ApiDorg, Extractores, ApiMemp,EventosEC,MiGestion
       
-    // }
+    }
 
 }
