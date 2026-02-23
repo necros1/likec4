@@ -1,0 +1,323 @@
+model {
+
+  coupa = system 'Coupa' {
+    description 'Aplicativo similar a SAP que gestiona las negociaciones y contratos con proveedores'
+    metadata {
+      FAI 'APP00006'
+      Delivery 'SaaS'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  oracleFinancialARUY = system 'Oracle Financial AR/UY' {
+    description 'Aplicacion ERP para procesos financieros. Registra contabilidad, maneja modulos de activo fijo y pago de proveedores.'
+    metadata {
+      FAI 'APP00096'
+      Delivery 'On-Site'
+      Codebase 'Buy'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  maximo = system 'Maximo' {
+    description 'Gestion de activos fisicos, inventario, mantenciones, proveedores y reportes (v7.6.5).'
+    metadata {
+      FAI 'APP00125'
+      Delivery 'Public Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  extensionesOracleFinancial = system 'Extensiones Oracle Financial' {
+    description 'Cargas masivas, cuentas por cobrar, viajes y miscelaneos en Oracle Financial.'
+    metadata {
+      FAI 'APP00195'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  sapERP = system 'SAP ERP' {
+    description 'ERP Financiero Contable (TR, OTC, PTP, RTR, MM, FI-AP, FI-GL, FI-AA, FI-TR, FI-AR, SD, CO, PS).'
+    metadata {
+      FAI 'APP00201'
+      Delivery 'On-Site'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  lv = system 'LV' {
+    description 'Libro de Ventas por documento, ticket y factura.'
+    metadata {
+      FAI 'APP00208'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Retirar'
+    }
+  }
+
+  workFlowMarketing = system 'Work Flow de Marketing' {
+    description 'Gestion de recupero por publicidad.'
+    metadata {
+      FAI 'APP00213'
+      Delivery 'Hosted'
+      Codebase 'Build'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  xbrl = system 'XBRL' {
+    description 'Informes de Estados Financieros en formato SVS.'
+    metadata {
+      FAI 'APP00219'
+      Delivery 'SaaS'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  highbond = system 'Highbond' {
+    description 'Sistema para la gestion de riesgos de auditoria.'
+    metadata {
+      FAI 'APP00317'
+      Delivery 'SaaS'
+      Codebase 'Buy'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  archerSeguridadFTC = system 'ARCHER – Seguridad FTC Riesgo SI' {
+    description 'Modulo de Seguridad para matrices de riesgo de Seguridad de la Informacion Corporativa.'
+    metadata {
+      FAI 'APP00318'
+      Delivery 'Public Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  archerFIF = system 'ARCHER – FIF Cumplimiento regulatorio' {
+    description 'Modulo de Seguridad para matrices de riesgo FIF.'
+    metadata {
+      FAI 'APP00492'
+      Delivery 'Public Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  oracleFinancialPE = system 'Oracle Financial PE' {
+    description 'ERP financiero para Peru.'
+    metadata {
+      FAI 'APP00559'
+      Delivery 'On-Site'
+      Codebase 'Buy'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  foso = system 'FOSO' {
+    description 'Integrador de aplicaciones con Oracle Financial.'
+    metadata {
+      FAI 'APP00616'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  hyperion = system 'Hyperion' {
+    description 'Solucion de planificacion financiera y presupuestos.'
+    metadata {
+      FAI 'APP00633'
+      Delivery 'Public Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  diligentBoards = system 'Diligent Boards' {
+    description 'Sistema SaaS para directorios corporativos.'
+    metadata {
+      FAI 'APP00826'
+      Delivery 'SaaS'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  sovosPaperless = system 'Sovos-Paperless' {
+    description 'Proveedor DTE para facturacion SAP ERP y POS.'
+    metadata {
+      FAI 'APP01306'
+      Delivery 'Hybrid Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  f8 = system 'F8' {
+    description 'Sistema de cuadratura de efectivo de tiendas.'
+    metadata {
+      FAI 'APP01821'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Retirar'
+    }
+  }
+
+  fdp = system 'Financial Data Platform (FDP)' {
+    description 'Finance Data Lake.'
+    metadata {
+      FAI 'APP01931'
+      Delivery 'SaaS'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  cmp = system 'CMP' {
+    description 'Compensacion de Medios de Pago.'
+    metadata {
+      FAI 'APP01989'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Retirar'
+    }
+  }
+
+  suiteCuadraturas = system 'Suite de Cuadraturas Corporativas' {
+    description 'Suite corporativa de cuadraturas financieras.'
+    metadata {
+      FAI 'APP01990'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  a2aSsf = system 'A2A-SSF' {
+    description 'Workflow de gestion de solicitudes enfocado en auditoria de cuentas.'
+    metadata {
+      FAI 'APP02150'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  plataformaB2BFinanciero = system 'Plataforma B2B financiero' {
+    description 'B2B financiero para proveedores.'
+    metadata {
+      FAI 'APP02282'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  billerFalabellaTrading = system 'Biller Falabella Trading' {
+    description 'Sistema relacionado a importacion de productos.'
+    metadata {
+      FAI 'APP02283'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  validadorProveedores = system 'Validador de Proveedores Falabella' {
+    description 'Plataforma de registro y validacion de proveedores.'
+    metadata {
+      FAI 'APP02284'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  sapBPC = system 'SAP Business Planning Consolidation' {
+    description 'Planificacion y consolidacion financiera.'
+    metadata {
+      FAI 'APP02285'
+      Delivery 'Public Cloud Service'
+      Codebase 'Buy'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  sistemaInformes = system 'Sistema de Informes' {
+    description 'Consolidacion de informes financieros Oracle.'
+    metadata {
+      FAI 'APP02286'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  tesoreria = system 'Tesorería' {
+    description 'Sistema de apoyo a Tesoreria Corporativa.'
+    metadata {
+      FAI 'APP02394'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  financeIA = system 'Finance IA' {
+    description 'Framework de IA para el portafolio de finanzas.'
+    metadata {
+      FAI 'APP02433'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Deprecar'
+    }
+  }
+
+  financeTechHub = system 'Finance Tech Hub' {
+    description 'Proyecto GCP para componentes transversales de Finanzas.'
+    metadata {
+      FAI 'APP02582'
+      Delivery 'Public Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  financeRPA = system 'Finance RPA' {
+    description 'Automatizacion de procesos financieros mediante RPA.'
+    metadata {
+      FAI 'APP02933'
+      Delivery 'Hybrid Cloud Service'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  pdcHighbond = system 'PDC Highbond' {
+    description 'Panel de control que centraliza informacion para Highbond.'
+    metadata {
+      FAI 'APP03039'
+      Delivery 'On-Site'
+      Codebase 'Build'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+  extensionesSapPO = system 'Extensiones SAP PO' {
+    description 'Maquinas que apoyan integraciones SAP ERP a legados externos.'
+    metadata {
+      FAI 'APP03041'
+      Delivery 'On-Site'
+      Codebase 'Bespoke'
+      Lifecycle 'Mantener/Evolucionar'
+    }
+  }
+
+}

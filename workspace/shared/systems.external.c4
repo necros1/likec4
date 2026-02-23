@@ -5,7 +5,7 @@ model {
             color gray
             size small
         }
-        linkedIn -[usesCapability]-> attraction
+        // linkedIn -[usesCapability]-> attraction
     }
     system datalake {
         description 'Finance Datalake' 

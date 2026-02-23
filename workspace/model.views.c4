@@ -81,7 +81,7 @@ views {
           color gray
           opacity 20%
           border solid
-          include enterpriseSuppportPeople, enterpriseSupportTi
+          // include enterpriseSuppportPeople, enterpriseSupportTi
         }
       }
       style * {

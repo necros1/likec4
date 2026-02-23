@@ -1,0 +1,44 @@
+//enterprise-support-ti.model.c4
+model {
+
+    /**********************************************************************
+        Enterprise Support TI DOMAIN
+    **********************************************************************/
+
+    enterpriseSupportTi = capability {
+        title 'Enterprise Support TI'
+        metadata {
+            Parent 'Falabella Group'
+        }
+    }
+
+    /**********************************************************************
+        LEVEL 1 — ENTERPRISE CAPABILITY MAP
+    **********************************************************************/
+
+    contentServices = capability {
+        title 'Content Services'
+        metadata {
+            Parent 'Enterprise Support TI'
+        }
+    }
+
+    /**********************************************************************
+        LEVEL 2 — Content Services CAPABILITY MAP
+    **********************************************************************/
+
+    electronicSign = capability {
+        title 'Electronic Sign'
+        description 'Tools and procedures related to digitized identification and authorization to conduct business between the parties involved'
+        metadata {
+            Parent 'Content Services'
+        }
+    }
+
+    /**********************************************************************
+        STRUCTURAL RELATION (según metamodelo soportado)
+    **********************************************************************/
+
+    enterpriseSupportTi -[containsCapability]-> contentServices
+    contentServices -[containsCapability]-> electronicSign
+}

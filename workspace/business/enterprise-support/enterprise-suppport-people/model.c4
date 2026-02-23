@@ -1,0 +1,226 @@
+//enterprise-support-ti.model.c4
+model {
+
+    /**********************************************************************
+        Enterprise Suppport People DOMAIN
+    **********************************************************************/
+    enterpriseSuppportPeople = capability{
+        title 'Enterprise Suppport People'
+        metadata {
+            Parent 'Falabella Group' 
+        }        
+    }
+    /**********************************************************************
+        LEVEL 1 — CAPABILITY MAP
+    **********************************************************************/
+    sustainability = capability{
+        title 'Sustainability'
+        metadata {
+            Parent 'Enterprise Suppport People'
+        }
+    }
+
+    talentManagementCommunications = capability {
+        title 'Talent Management & Communications'
+        metadata {
+            Parent 'Enterprise Suppport People'
+        }
+    }
+
+    ermGroup = capability{
+        title 'ERM (Group)'
+        metadata {
+            Parent 'Enterprise Suppport People'
+        }
+    }
+
+    core = capability{
+        title 'Core'
+        metadata {
+        Parent 'Enterprise Suppport People' 
+        }
+    }
+
+    peopleAnalytics = capability{
+        title 'People Analytics (Group)'
+        metadata {
+            Parent 'Enterprise Suppport People' 
+        }        
+    }
+
+    compensations = capability {
+        title 'Compensations (Group)'
+        metadata {
+            Parent 'Enterprise Suppport People'
+        }
+    }
+
+    /**********************************************************************
+        LEVEL 2 — CAPABILITY MAP
+    **********************************************************************/
+    voiceOfEmployee = capability{
+        title 'Voice Of Employee'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    employeeMaster = capability {
+        title 'Employee Master'
+        description 'Manage complete employee information. Includes services that provide self-care functionalities on the part of the employee.'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    organizationalDesign = capability{
+        title 'Organizational Design'
+        description 'Associated with the hierarchical relationship of the personnel. Identification of roles and functional profiles according to the position.'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    documents = capability {
+        title 'Documents'
+        description 'Manages the legal documents of the employees, such as contracts, contract annexes, etc.'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    volunteerWork = capability{
+        title 'Volunteer Work'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    performance = capability {
+        title 'Performance'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    onBoarding = capability {
+        title 'On Boarding'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    attraction = capability {
+        title 'Attraction'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    socialNetwork = capability {
+        title 'Social Network'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    recognition = capability{
+        title 'Recognition'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    learning = capability{
+        title 'Learning'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Core' 
+        }
+    }
+    caseManagementPeople = capability {
+        title 'Case Management People'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'ERM (Group)' 
+        }
+    }
+    chatBotPeople = capability {
+        title 'Chat Bot People'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'ERM (Group)' 
+        }
+    }
+    erm = capability{
+        title 'ERM'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'ERM (Group)' 
+        }
+    }  
+    benefits = capability {
+        title 'Benefits'    
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Compensations (Group)' 
+        }
+    }
+    payrollCapability = capability{
+        title 'Payroll'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Compensations (Group)' 
+        }
+    }
+    timeAndAttendance = capability{
+        title 'Time and Attendance'
+        metadata {
+            Domain 'Enterprise Support People'
+            Parent 'Compensations (Group)' 
+        }
+    }
+
+    /**********************************************************************
+        STRUCTURAL RELATION (según metamodelo soportado)
+    **********************************************************************/
+
+    enterpriseSuppportPeople -[containsCapability]-> core
+    enterpriseSuppportPeople -[containsCapability]-> peopleAnalytics
+    enterpriseSuppportPeople -[containsCapability]-> compensations
+    enterpriseSuppportPeople -[containsCapability]-> ermGroup
+    enterpriseSuppportPeople -[containsCapability]-> talentManagementCommunications
+    enterpriseSuppportPeople -[containsCapability]-> sustainability
+
+    sustainability -[containsCapability]-> volunteerWork
+
+    talentManagementCommunications -[containsCapability]-> performance
+    talentManagementCommunications -[containsCapability]-> onBoarding
+    talentManagementCommunications -[containsCapability]-> attraction
+    talentManagementCommunications -[containsCapability]-> socialNetwork
+    talentManagementCommunications -[containsCapability]-> recognition
+    talentManagementCommunications -[containsCapability]-> learning
+
+    ermGroup -[containsCapability]-> caseManagementPeople
+    ermGroup -[containsCapability]-> chatBotPeople
+    ermGroup -[containsCapability]-> erm
+
+    core -[containsCapability]-> employeeMaster
+    core -[containsCapability]-> organizationalDesign
+    core -[containsCapability]-> documents
+    core -[containsCapability]-> volunteerWork
+    core -[containsCapability]-> performance
+    core -[containsCapability]-> onBoarding
+    core -[containsCapability]-> attraction
+    core -[containsCapability]-> socialNetwork
+    core -[containsCapability]-> recognition
+    core -[containsCapability]-> learning
+    core -[containsCapability]-> voiceOfEmployee
+
+    // peopleAnalytics -[containsCapability]-> voiceOfEmployee
+
+    compensations -[containsCapability]-> benefits
+    compensations -[containsCapability]-> payrollCapability
+    compensations -[containsCapability]-> timeAndAttendance
+
+}

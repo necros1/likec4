@@ -1,0 +1,158 @@
+views {
+    // view enterpriseSuppportPeopleApplications {
+    //   title 'Enablers / People / Applications / All Applications'
+    //   include 
+    //     relojbiometricoSpr,saba,firmaElectronicaPersonalInterno,
+    //     sapNomina,
+    //     falanetApp,
+    //     relojesMarcadoresPe,
+    //     miFalabella,
+    //     firmaElectronicabyFalabella,
+    //     portalBeneficios,
+    //     payflow,
+    //     haciendoEscuela,
+    //     qualtrics,
+    //     reconocimiento,
+    //     vivaEngage,
+    //     eSign,
+    //     portalEmpleados,
+    //     degree,
+    //     wimper,
+    //     ubits,
+    //     muevete,
+    //     trabajandoCom,
+    //     rankmi,
+    //     payroll,
+    //     getAbstract,
+    //     eClass,
+    //     sysnel,
+    //     nomiplus,
+    //     sorianaRelojControl,
+    //     moodle,
+    //     controlDeAsistencias,
+    //     chatbotCorporativoBella,
+    //     buk,
+    //     asistenteDeCalibracion,
+    //     administracionCartera,
+    //     datamace,
+    //     datapino,
+    //     diferencialEmpleadosCajasTottus,
+    //     intranetMiCasa,
+    //     ocupacionalSSO,
+    //     ofisisSmart,
+    //     spr,
+    //     planillaEjecutivos,
+    //     sprSaas,
+    //     nomina,
+    //     sprWeb,
+    //     empleadoCentral,
+    //     adobeSign,
+    //     gestorDocumentosCorporativoHyland,
+    //     geoVictoria,
+    //     employeeCentralPayroll,
+    //     aira 
+    //   // include *,
+    // }
+
+
+    view relojbiometricoSpr of relojbiometricoSpr {
+      title 'Platforms / Enablers / People / Reloj biometrico SPR / Capabilities'
+      include relojbiometricoSpr, timeAndAttendance
+    }
+    view qualtrics of qualtrics {
+      title 'Platforms / Enablers / People / Qualtrics / Capabilities'
+      include qualtrics, voiceOfEmployee
+    }
+
+    // view saba of saba {
+    //   title 'Enablers / People / Applications / SABA / Capabilities'
+    //   include saba, 
+    //   learning
+    // }
+    // view firmaElectronicaPersonalInterno of firmaElectronicaPersonalInterno {
+    //   title 'Enablers / People / Applications / Firma Electrónica Personal Interno / Capabilities'
+    //   include firmaElectronicaPersonalInterno, 
+    //   electronicSign
+    // }
+    // view sapNomina of sapNomina {
+    //   title 'Enablers / People / Applications / SAP Nómina / Capabilities'
+    //   include sapNomina, 
+    //   payrollCapability
+    // }
+    // view falanetApp of falanetApp {
+    //   title 'Enablers / People / Applications / Falanet (App) / Capabilities'
+    //   include falanetApp, 
+    //   payrollCapability
+    // }
+    // view relojesMarcadoresPe of relojesMarcadoresPe {
+    //   title 'Enablers / People / Applications / Relojes Marcadores PE / Capabilities'
+    //   include relojesMarcadoresPe, 
+    //   timeAndAttendance
+    // }
+    // view miFalabella of miFalabella {
+    //   title 'Enablers / People / Applications / Relojes Marcadores PE / Capabilities'
+    //   include miFalabella, 
+    //   erm
+    // }
+    // view firmaElectronicabyFalabella of firmaElectronicabyFalabella {
+    //   title 'Enablers / People / Applications / Firma Electronica by Falabella / Capabilities'
+    //   include firmaElectronicabyFalabella, 
+    //   erm
+    // }
+    // view portalBeneficios of portalBeneficios {
+    //   title 'Enablers / People / Applications / Portal Beneficios / Capabilities'
+    //   include portalBeneficios, 
+    //   benefits
+    // }
+    // view payflow of payflow {
+    //   title 'Enablers / People / Applications / Payflow / Capabilities'
+    //   include payflow, 
+    //   payrollCapability
+    // }
+
+    // view haciendoEscuela of haciendoEscuela {
+    //   title 'Enablers / People / Applications / Haciendo Escuela / Capabilities'
+    //   include haciendoEscuela, 
+    //   volunteerWork
+    // }
+    
+    // view reconocimiento of reconocimiento {
+    //   title 'Enablers / People / Applications / Reconocimiento / Capabilities'
+    //   include reconocimiento, 
+    //   recognition
+    // }
+    // view eSign of eSign {
+    //   title 'Enablers / People / Applications / eSign / Capabilities'
+    //   include eSign, 
+    //   electronicSign
+    // }
+    // view portalEmpleados of portalEmpleados {
+    //   title 'Enablers / People / Applications / Portal Empleados / Capabilities'
+    //   include portalEmpleados, 
+    //   caseManagementPeople
+    // }
+    // view degree of degree {
+    //   title 'Enablers / People / Applications / Degree / Capabilities'
+    //   include degree, 
+    //   learning
+    // }
+    // view wimper of wimper {
+    //   title 'Enablers / People / Applications / Wimper / Capabilities'
+    //   include wimper, 
+    //   learning, payrollCapability
+    // }
+
+    // view contextEmpleadoCentral of empleadoCentral {
+    //   // title 'Modelo C1 Sistema Motor de contactabilidad'
+    //   title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 1'
+    //   include empleadoCentral,GW,spr,employeeCentralPayroll,
+    //   File, GD, geoVictoria, aira
+    // }
+    // view ContainerEmpleadoCentral of empleadoCentral{
+    //   title 'Enablers / People / Applications / Empleado Central / Producción / Nivel 2'
+    //   include *,
+    //     -> HCI,ApiDorg, Extractores, ApiMemp,EventosEC,MiGestion
+      
+    // }
+
+}

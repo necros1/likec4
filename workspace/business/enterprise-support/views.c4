@@ -1,0 +1,14 @@
+views {
+    view EnterpriseSupport {
+        title 'Business Capability Map / Enterprise Support'
+        
+        group 'Enterprise Support Domain'{
+            color red
+            opacity 20%
+            border solid
+          include enterpriseSupportTi, enterpriseSuppportPeople
+        }
+        
+    }
+
+}

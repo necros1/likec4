@@ -1,4 +1,5 @@
 specification {
+  relationship containsCapability
   relationship usesCapability
   relationship usesApplication
 

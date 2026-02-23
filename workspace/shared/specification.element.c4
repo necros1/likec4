@@ -13,6 +13,18 @@ specification {
     }
   }
 
+  element capability {
+    notation "Capacidad de Negocio"
+    style {
+      color gray
+      opacity 30%
+      border solid
+      shape rectangle
+      size  small
+      textSize small
+    }
+  }
+
   element actor {
     notation "Person, Customer"
     style {
