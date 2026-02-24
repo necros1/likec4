@@ -5,13 +5,28 @@ views {
         CAPABILITY MAP VIEWS
     **********************************************************************/
     view EnterpriseSupportPeople_L1 of enterpriseSuppportPeople {
-        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 1 - Domain Capabilities'
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Domain Capabilities'
         include enterpriseSuppportPeople,core,peopleAnalytics,compensations,ermGroup,
         talentManagementCommunications,sustainability
     }
-    
+    view sustainability_L2 of sustainability {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Sustainability'
+        include sustainability,volunteerWork
+    }
+    view talentManagementCommunications_L2 of talentManagementCommunications {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Talent Management & Communications'
+        include talentManagementCommunications,performance,onBoarding,attraction,socialNetwork,recognition,learning
+    }
+    view ermGroup_L2 of ermGroup {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / ERM (Group)'
+        include ermGroup,caseManagementPeople,chatBotPeople,erm
+    }
+    view compensations_L2 of compensations {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Compensations'
+        include compensations,benefits,payrollCapability,timeAndAttendance
+    }
     view Core_L2 of core {
-        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Core - Level 2'
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Core'
         include core,employeeMaster,organizationalDesign,documents,volunteerWork,performance,onBoarding,
         attraction,socialNetwork,recognition,learning,voiceOfEmployee
     }
@@ -20,12 +35,52 @@ views {
         CAPABILITY → APPLICATION SUPPORT VIEWS
         (Which applications support each business capability)
     **********************************************************************/
-
-    view VoiceOfEmployee_Applications of voiceOfEmployee {
-    title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Voice Of Employee / Supporting Applications'
-    include voiceOfEmployee,
-            qualtrics
+    view voiceOfEmployee_Applications of voiceOfEmployee {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Voice Of Employee / Supporting Applications'
+        include voiceOfEmployee,qualtrics
     }
+    view learning_Applications of learning {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Learning / Supporting Applications'
+        include learning,buk,degree,eClass,getAbstract,moodle,saba,ubits
+    }
+    view recognition_Applications of recognition {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Recognition / Supporting Applications'
+        include recognition, reconocimiento
+    }
+    view socialNetwork_Applications of socialNetwork {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Social Network / Supporting Applications'
+        include socialNetwork,vivaEngage
+    }
+    view attraction_Applications of attraction {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Attraction / Supporting Applications'
+        include attraction,aira,linkedIn,muevete
+    }
+    view onBoarding_Applications of onBoarding {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / OnBoarding / Supporting Applications'
+        include onBoarding, trabajandoCom
+    }
+    view performance_Applications of performance {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Performance / Supporting Applications'
+        include performance, asistenteDeCalibracion
+    }
+    view volunteerWork_Applications of volunteerWork {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Volunteer Work / Supporting Applications'
+        include volunteerWork, haciendoEscuela
+    }
+    view documents_Applications of documents {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Documents / Supporting Applications'
+        include documents, adobeSign, gestorDocumentosCorporativoHyland
+    }
+    view organizationalDesign_Applications of organizationalDesign {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Organizational Design / Supporting Applications'
+        include organizationalDesign, empleadoCentral
+    }
+    view employeeMaster_Applications of employeeMaster {
+        title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Employee Master / Supporting Applications'
+        include employeeMaster,
+                empleadoCentral, administracionCartera, datamace,datapino,diferencialEmpleadosCajasTottus,intranetMiCasa,ocupacionalSSO,ofisisSmart,spr,planillaEjecutivos,sprSaas,nomina,sprWeb
+    }
+    
 }
 
     // view Learning_Applications of learning {
