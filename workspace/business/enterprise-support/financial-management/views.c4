@@ -1,0 +1,86 @@
+views {
+   /**********************************************************************
+        CAPABILITY MAP VIEWS
+    **********************************************************************/
+   view financialManagement_L1 of financialManagement {
+      
+      title 'Business Capability Map / Enterprise Support / Financial Management / Domain Capabilities'
+      group 'Financial Management Domain'{
+         color red
+         opacity 20%
+         border solid
+         include coreFinancialOperations, FinancialPlanningAndPerformance, TreasuryAndRisk, GovernanceAndCompliance, SourcingAndProcurement, FinancePlatformSupport
+      }
+      
+    }
+   
+   view coreFinancialOperations_L2 of coreFinancialOperations {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Core Financial Operations'
+      group 'Core Financial Operations'{
+         color blue
+         opacity 20%
+         border solid
+         include AccountPayables, AccountReceivables, billing, accountingLedger, fixedAsset
+      }
+      
+   }
+
+   view FinancialPlanningAndPerformance_L2 of FinancialPlanningAndPerformance {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Financial Planning & Performance'
+      group 'Financial Planning & Performance'{
+         color green
+         opacity 20%
+         border solid
+         include  financialReporting, controlAndBudgetManagement, financeAnalytics
+      }
+      
+   }
+
+   view TreasuryAndRisk_L2 of TreasuryAndRisk {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Treasury & Risk'
+      group 'Treasury & Risk'{
+         color amber
+         opacity 20%
+         border solid
+         include treasuryManagement
+      }
+      
+   }
+   view GovernanceAndCompliance_L2 of GovernanceAndCompliance {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Governance & Compliance'
+      group 'Governance & Compliance'{
+         color red
+         opacity 20%
+         border solid
+         include auditManagement, CorporateComplianceAndOversight
+      }
+   }
+
+   view SourcingAndProcurement_L2 of SourcingAndProcurement {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Sourcing & Procurement'
+      group 'Sourcing & Procurement'{
+         color indigo
+         opacity 20%
+         border solid
+         include purchasingAndSupplierManagement, purchaseOrderManagement, contractManagement
+      }
+      
+   }
+
+   view FinancePlatformSupport_L2 of FinancePlatformSupport {
+      title 'Business Capability Map / Enterprise Support / Financial Management / Level 2 / Finance Platform Support'
+      group 'Finance Platform Support'{
+         color gray
+         opacity 20%
+         border solid
+         include employeeIdentityAndAccessManagement, iTProcessManagement
+      }
+      
+   }
+
+   /**********************************************************************
+        CAPABILITY → APPLICATION SUPPORT VIEWS
+        (Which applications support each business capability)
+    **********************************************************************/
+    
+}

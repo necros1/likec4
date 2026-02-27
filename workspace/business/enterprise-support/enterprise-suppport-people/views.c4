@@ -6,29 +6,58 @@ views {
     **********************************************************************/
     view EnterpriseSupportPeople_L1 of enterpriseSuppportPeople {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Domain Capabilities'
-        include enterpriseSuppportPeople,core,peopleAnalytics,compensations,ermGroup,
-        talentManagementCommunications,sustainability
+        group 'Enterprise Suppport People Domain'{
+            color red
+            opacity 20%
+            border solid
+            include core,peopleAnalytics,compensations,ermGroup,talentManagementCommunications,sustainability
+        }
     }
+
     view sustainability_L2 of sustainability {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Sustainability'
-        include sustainability,volunteerWork
+        group 'Sustainability'{
+            color red
+            opacity 20%
+            border solid
+            include volunteerWork
+        }
     }
     view talentManagementCommunications_L2 of talentManagementCommunications {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Talent Management & Communications'
-        include talentManagementCommunications,performance,onBoarding,attraction,socialNetwork,recognition,learning
+        group 'Talent Management & Communications'{
+            color red
+            opacity 20%
+            border solid
+            include performance,onBoarding,attraction,socialNetwork,recognition,learning
+        }
     }
     view ermGroup_L2 of ermGroup {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / ERM (Group)'
-        include ermGroup,caseManagementPeople,chatBotPeople,erm
+        group 'ERM Group'{
+            color red
+            opacity 20%
+            border solid
+            include caseManagementPeople,chatBotPeople,erm
+        }
     }
     view compensations_L2 of compensations {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Compensations'
-        include compensations,benefits,payrollCapability,timeAndAttendance
+        group 'Compensations'{
+            color red
+            opacity 20%
+            border solid
+            include benefits,payrollCapability,timeAndAttendance
+        }
     }
     view Core_L2 of core {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 2 / Core'
-        include core,employeeMaster,organizationalDesign,documents,volunteerWork,performance,onBoarding,
-        attraction,socialNetwork,recognition,learning,voiceOfEmployee
+        group 'Core'{
+            color red
+            opacity 20%
+            border solid
+            include employeeMaster,organizationalDesign,documents,volunteerWork,performance,onBoarding,attraction,socialNetwork,recognition,learning,voiceOfEmployee
+        }        
     }
 
     /**********************************************************************

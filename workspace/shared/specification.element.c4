@@ -1,18 +1,6 @@
 //specification.element.c4
 specification {
 
-  element capabilityEnablers {
-    notation "Capacidad de Negocio de Enablers"
-    style {
-      color gray
-      opacity 30%
-      border solid
-      shape rectangle
-      size  small
-      textSize small
-    }
-  }
-
   element capability {
     notation "Capacidad de Negocio"
     style {

@@ -1,0 +1,205 @@
+//enterprise-support-ti.model.c4
+model {
+
+    /**********************************************************************
+        Financial Management DOMAIN
+    **********************************************************************/
+        financialManagement = capability {
+        title 'Financial Management'
+        metadata {
+            Parent 'Enterprise Support'
+        }
+    }
+   
+
+    /**********************************************************************
+        LEVEL 1 — ENTERPRISE CAPABILITY MAP
+    **********************************************************************/
+        coreFinancialOperations = capability {
+            title 'Core Financial Operations'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+        FinancialPlanningAndPerformance = capability {
+            title 'Financial Planning & Performance'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+        TreasuryAndRisk = capability {
+            title 'Treasury & Risk'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+        GovernanceAndCompliance = capability {
+            title 'Governance & Compliance'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+        SourcingAndProcurement = capability {
+            title 'Sourcing & Procurement'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+        FinancePlatformSupport = capability {
+            title 'Finance Platform Support'
+            metadata {
+                Parent 'Financial Management'
+            }
+        }
+    /**********************************************************************
+        LEVEL 2 — Content Services CAPABILITY MAP
+    **********************************************************************/
+        AccountPayables = capability {
+            title 'Account Payables'
+            description 'Tools and procedures related to the management of the company\'s obligations to pay off short-term debt to its creditors or suppliers.'
+            metadata {
+                Parent 'Core Financial Operations'
+            }
+        }
+        AccountReceivables = capability {
+            title 'Account Receivables'
+            description 'Tools and procedures related to the management of the company\'s claims for payment from customers or clients for goods or services provided on credit.'
+            metadata {
+                Parent 'Core Financial Operations'
+            }
+        }
+        billing = capability {
+            title 'Billing'
+            description 'Tools and procedures related to the generation and management of invoices for goods or services provided by the company to its customers.'
+            metadata {
+                Parent 'Core Financial Operations'
+            }
+        }
+        accountingLedger = capability {
+            title 'Accounting Ledger'
+            description 'Tools and procedures related to the recording and management of financial transactions in the company\'s accounting system.'
+            metadata {
+                Parent 'Core Financial Operations'
+            }
+        }
+        fixedAsset = capability {
+            title 'Fixed Asset'
+            description 'Tools and procedures related to the management of the company\'s long-term tangible assets, such as property, plant, and equipment.'
+            metadata {
+                Parent 'Core Financial Operations'
+            }
+        }
+        financialReporting = capability {
+            title 'Financial Reporting'
+            description 'Tools and procedures related to the preparation and presentation of financial statements and reports that provide insights into the company\'s financial performance and position.'
+            metadata {
+                Parent 'Financial Planning & Performance'
+            }
+        }
+        controlAndBudgetManagement = capability {
+            title 'Control & Budget Management'
+            description 'Tools and procedures related to the planning, monitoring, and controlling of the company\'s financial resources to ensure that they are used effectively and efficiently.'
+            metadata {
+                Parent 'Financial Planning & Performance'
+            }
+        }
+        financeAnalytics = capability {
+            title 'Finance Analytics'
+            description 'Tools and procedures related to the analysis of financial data to support decision-making and improve financial performance.'
+            metadata {
+                Parent 'Financial Planning & Performance'
+            }
+        }
+
+        treasuryManagement = capability {
+            title 'Treasury Management'
+            description 'Tools and procedures related to the management of the company\'s cash flow, liquidity, and financial risk.'
+            metadata {
+                Parent 'Treasury & Risk'
+            }
+        }
+        auditManagement = capability {
+            title 'Audit Management'
+            description 'Tools and procedures related to the planning, execution, and reporting of internal and external audits to ensure compliance with financial regulations and standards.'
+            metadata {
+                Parent 'Governance & Compliance'
+            }
+        }
+        CorporateComplianceAndOversight = capability {
+            title 'Corporate Compliance & Oversight'
+            description 'Tools and procedures related to the management of the company\'s compliance with legal and regulatory requirements, as well as internal policies and standards.'
+            metadata {
+                Parent 'Governance & Compliance'
+            }
+        }
+
+        purchasingAndSupplierManagement = capability {
+            title 'Purchasing & Supplier Management'
+            description 'Tools and procedures related to the management of the company\'s procurement processes and relationships with suppliers.'
+            metadata {
+                Parent 'Sourcing & Procurement'
+            }
+        }
+
+        purchaseOrderManagement = capability {
+            title 'Purchase Order Management'
+            description 'Tools and procedures related to the creation, approval, and tracking of purchase orders for goods and services.'
+            metadata {
+                Parent 'Sourcing & Procurement'
+            }
+        }
+        contractManagement = capability {
+            title 'Contract Management'
+            description 'Tools and procedures related to the creation, negotiation, and management of contracts with suppliers and vendors.'
+            metadata {
+                Parent 'Sourcing & Procurement'
+            }
+        }
+        employeeIdentityAndAccessManagement = capability {
+            title 'Employee Identity & Access Management'
+            description 'Tools and procedures related to the management of employee identities and access to financial systems and data.'
+            metadata {
+                Parent 'Finance Platform Support'
+            }
+        }
+        iTProcessManagement = capability {
+            title 'IT Process Management'
+            description 'Tools and procedures related to the management of IT processes that support financial operations and systems.'
+            metadata {
+                Parent 'Finance Platform Support'
+            }
+        }
+   
+    /**********************************************************************
+        STRUCTURAL RELATION (según metamodelo soportado)
+    **********************************************************************/
+        financialManagement -[containsCapability]-> coreFinancialOperations
+        financialManagement -[containsCapability]-> FinancialPlanningAndPerformance
+        financialManagement -[containsCapability]-> TreasuryAndRisk
+        financialManagement -[containsCapability]-> GovernanceAndCompliance
+        financialManagement -[containsCapability]-> SourcingAndProcurement
+        financialManagement -[containsCapability]-> FinancePlatformSupport
+
+        coreFinancialOperations -[containsCapability]-> AccountPayables
+        coreFinancialOperations -[containsCapability]-> AccountReceivables
+        coreFinancialOperations -[containsCapability]-> billing
+        coreFinancialOperations -[containsCapability]-> accountingLedger
+        coreFinancialOperations -[containsCapability]-> fixedAsset
+
+        FinancialPlanningAndPerformance -[containsCapability]-> financialReporting
+        FinancialPlanningAndPerformance -[containsCapability]-> controlAndBudgetManagement
+        FinancialPlanningAndPerformance -[containsCapability]-> financeAnalytics
+
+        TreasuryAndRisk -[containsCapability]-> treasuryManagement
+
+        GovernanceAndCompliance -[containsCapability]-> auditManagement
+        GovernanceAndCompliance -[containsCapability]-> CorporateComplianceAndOversight
+
+        SourcingAndProcurement -[containsCapability]-> purchasingAndSupplierManagement
+        SourcingAndProcurement -[containsCapability]-> purchaseOrderManagement
+        SourcingAndProcurement -[containsCapability]-> contractManagement
+
+        FinancePlatformSupport -[containsCapability]-> employeeIdentityAndAccessManagement
+        FinancePlatformSupport -[containsCapability]-> iTProcessManagement
+        
+}

@@ -7,7 +7,8 @@ model {
     enterpriseSuppportPeople = capability{
         title 'Enterprise Suppport People'
         metadata {
-            Parent 'Falabella Group' 
+            // Parent 'Falabella Group' 
+            Parent 'Enterprise Support'
         }        
     }
     /**********************************************************************
@@ -61,7 +62,6 @@ model {
     voiceOfEmployee = capability{
         title 'Voice Of Employee'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
@@ -69,7 +69,6 @@ model {
         title 'Employee Master'
         description 'Manage complete employee information. Includes services that provide self-care functionalities on the part of the employee.'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
@@ -77,7 +76,6 @@ model {
         title 'Organizational Design'
         description 'Associated with the hierarchical relationship of the personnel. Identification of roles and functional profiles according to the position.'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
@@ -85,98 +83,84 @@ model {
         title 'Documents'
         description 'Manages the legal documents of the employees, such as contracts, contract annexes, etc.'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     volunteerWork = capability{
         title 'Volunteer Work'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     performance = capability {
         title 'Performance'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     onBoarding = capability {
         title 'On Boarding'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     attraction = capability {
         title 'Attraction'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     socialNetwork = capability {
         title 'Social Network'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     recognition = capability{
         title 'Recognition'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     learning = capability{
         title 'Learning'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Core' 
         }
     }
     caseManagementPeople = capability {
         title 'Case Management People'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'ERM (Group)' 
         }
     }
     chatBotPeople = capability {
         title 'Chat Bot People'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'ERM (Group)' 
         }
     }
     erm = capability{
         title 'ERM'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'ERM (Group)' 
         }
     }  
     benefits = capability {
         title 'Benefits'    
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Compensations (Group)' 
         }
     }
     payrollCapability = capability{
         title 'Payroll'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Compensations (Group)' 
         }
     }
     timeAndAttendance = capability{
         title 'Time and Attendance'
         metadata {
-            Domain 'Enterprise Support People'
             Parent 'Compensations (Group)' 
         }
     }

@@ -8,7 +8,8 @@ model {
     enterpriseSupportTi = capability {
         title 'Enterprise Support TI'
         metadata {
-            Parent 'Falabella Group'
+            // Parent 'Falabella Group'
+            Parent 'Enterprise Support'
         }
     }
 
@@ -39,6 +40,6 @@ model {
         STRUCTURAL RELATION (según metamodelo soportado)
     **********************************************************************/
 
-    enterpriseSupportTi -[containsCapability]-> contentServices
-    contentServices -[containsCapability]-> electronicSign
+    enterpriseSupportTi -[containsCapability]-> contentServices "Contains Capability"
+    contentServices -[containsCapability]-> electronicSign "Contains Capability"
 }
