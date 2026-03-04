@@ -1,0 +1,77 @@
+//enterprise-support-ti.model.c4
+model {
+
+    /**********************************************************************
+        Digital Commerce DOMAIN
+    **********************************************************************/
+
+    digitalCommerce = capability {
+        title 'Digital Commerce'
+        metadata {
+            // Parent 'Falabella Group'
+            Parent 'Core Business'
+        }
+    }
+
+    /**********************************************************************
+        LEVEL 1 — ENTERPRISE CAPABILITY MAP
+    **********************************************************************/
+    digitalStorefrontAndChannels = capability {
+        title 'Digital Storefront & Channels'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    productAndMerchandising = capability {
+        title 'Product & Merchandising'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    marketingAndEngagement = capability {
+        title 'Marketing & Engagement'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    salesAndOrderManagement = capability {
+        title 'Sales & Order Management'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    fulfillmentAndLogistics = capability {
+        title 'Fulfillment & Logistics'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    marketplaceOperations = capability {
+        title 'Marketplace Operations'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    customerService = capability {
+        title 'Customer Service'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    platformEnablers = capability {
+        title 'Platform Enablers'
+        metadata {
+            Parent 'Digital Commerce'
+        }
+    }
+    
+    /**********************************************************************
+        LEVEL 2 — Content Services CAPABILITY MAP
+    **********************************************************************/
+
+    
+    /**********************************************************************
+        STRUCTURAL RELATION (según metamodelo soportado)
+    **********************************************************************/
+
+}

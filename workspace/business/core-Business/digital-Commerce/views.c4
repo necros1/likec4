@@ -1,0 +1,22 @@
+views {
+   /**********************************************************************
+        CAPABILITY MAP VIEWS
+    **********************************************************************/
+   view digital-Commerce_L1 of digitalCommerce {
+      
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Domain Capabilities'
+      group 'Digital Commerce Domain'{
+         color gray
+         opacity 20%
+         border solid
+         include digitalStorefrontAndChannels, productAndMerchandising, marketingAndEngagement, salesAndOrderManagement, fulfillmentAndLogistics, marketplaceOperations, customerService, platformEnablers
+      }
+      
+    }
+
+   /**********************************************************************
+        CAPABILITY → APPLICATION SUPPORT VIEWS
+        (Which applications support each business capability)
+    **********************************************************************/
+    
+}

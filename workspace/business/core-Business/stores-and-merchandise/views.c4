@@ -1,0 +1,22 @@
+views {
+   /**********************************************************************
+        CAPABILITY MAP VIEWS
+    **********************************************************************/
+   view storesAndMerchandise_L1 of storesAndMerchandise {
+      
+      title 'Business Capability Map / Core Business Domain / Stores & Merchandise / Domain Capabilities'
+      group 'Stores & Merchandise Domain'{
+         color red
+         opacity 10%
+         border solid
+         
+      }
+      
+    }
+
+   /**********************************************************************
+        CAPABILITY → APPLICATION SUPPORT VIEWS
+        (Which applications support each business capability)
+    **********************************************************************/
+    
+}

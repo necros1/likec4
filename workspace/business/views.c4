@@ -8,6 +8,12 @@ views {
             border solid
           include enterpriseSupportTi, enterpriseSuppportPeople,financialManagement
         }
+        group 'Core Business Domain'{
+            color blue
+            opacity 20%
+            border solid
+          include digitalCommerce,storesAndMerchandise,supplyChain
+        }
         
     }
 

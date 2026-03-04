@@ -1,0 +1,21 @@
+views {
+   /**********************************************************************
+        CAPABILITY MAP VIEWS
+    **********************************************************************/
+   view supplyChain_L1 of supplyChain {
+      
+      title 'Business Capability Map / Core Business Domain / Supply Chain / Domain Capabilities'
+      group 'Supply Chain Domain'{
+         color green
+         opacity 20%
+         border solid
+      }
+      
+    }
+
+   /**********************************************************************
+        CAPABILITY → APPLICATION SUPPORT VIEWS
+        (Which applications support each business capability)
+    **********************************************************************/
+    
+}

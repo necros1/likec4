@@ -469,7 +469,7 @@ model {
       FAI 'APP02021'
       LifeCycle 'Implementar'
     }
-    aira -[usesCapability]-> attraction
+    aira -[supportsCapability]-> attraction "Supports"
   }
 
 }

@@ -1,5 +1,10 @@
 specification {
   relationship containsCapability
+  relationship supportsCapability {
+    line solid
+    color blue // Azul profundo para soporte tecnológico
+  }
+
   relationship usesCapability
   relationship usesApplication
 
