@@ -68,10 +68,402 @@ model {
     /**********************************************************************
         LEVEL 2 — Content Services CAPABILITY MAP
     **********************************************************************/
-
-    
+    webEcommerce = capability {
+        title 'Web Ecommerce'
+        description 'Tools and procedures related to the management of the web channel for the sale of products and services to customers.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    mobileApps = capability {
+        title 'Mobile Apps'
+        description 'Tools and procedures related to the management of mobile applications for the sale of products and services to customers.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    search = capability {
+        title 'Search'
+        description 'Tools and procedures related to the management of search functionalities for customers to find products and services.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    cart = capability {
+        title 'Cart'
+        description 'Tools and procedures related to the management of the shopping cart for customers to add products and services before proceeding to checkout.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    recommendations = capability {
+        title 'Recommendations'
+        description 'Tools and procedures related to the management of recommendation systems to suggest products and services to customers based on their preferences and behavior.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    digitalSupportInStore = capability {
+        title 'Digital Support In-Store'
+        description 'Tools and procedures related to the management of digital support for customers in physical stores, such as kiosks, tablets, or mobile apps.'
+        metadata {
+            Parent 'Digital Storefront & Channels'
+        }
+    }
+    productCatalog = capability {
+        title 'Product Catalog'
+        description 'Tools and procedures related to the management of the product catalog, including product information, pricing, and availability.'
+        metadata {
+            Parent 'Product & Merchandising'
+        }
+    }
+    priceManagement = capability {
+        title 'Price Management'
+        description 'Tools and procedures related to the management of pricing strategies, discounts, and promotions for products and services.'
+        metadata {
+            Parent 'Product & Merchandising'
+        }
+    }
+    priceandOffering = capability {
+        title 'Price & Offering'
+        description 'Tools and procedures related to the management of pricing strategies, discounts, and promotions for products and services.'
+        metadata {
+            Parent 'Product & Merchandising'
+        }
+    }
+    promotions = capability {
+        title 'Promotions'
+        description 'Tools and procedures related to the management of promotions and campaigns to attract and retain customers.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    contentManagement = capability {
+        title 'Content Management'
+        description 'Tools and procedures related to the management of content for marketing and engagement purposes, such as banners, videos, and social media.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    campaignOrchestrationRetail = capability {
+        title 'Campaign Orchestration & Retail Media'
+        description 'Tools and procedures related to the management of campaign orchestration and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    socialMarketingRetail = capability {
+        title 'Social Marketing & Retail Media'
+        description 'Tools and procedures related to the management of social marketing and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    displayAndSearchMarketingRetail = capability {
+        title 'Display & Search Marketing & Retail Media'
+        description 'Tools and procedures related to the management of display and search marketing and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    marketingContentRetail = capability {
+        title 'Marketing Content & Retail Media'
+        description 'Tools and procedures related to the management of marketing content and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    audienceTargeting = capability {
+        title 'Audience Targeting'
+        description 'Tools and procedures related to the management of audience targeting to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    loyaltyRetail = capability {
+        title 'Loyalty & Retail'
+        description 'Tools and procedures related to the management of loyalty programs and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    customerAccountAndPreferencesRetail = capability {
+        title 'Customer Account & Preferences & Retail'
+        description 'Tools and procedures related to the management of customer accounts, preferences, and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    customerIdentityAccessAndConsentRetail = capability {
+        title 'Customer Identity, Access & Consent & Retail'
+        description 'Tools and procedures related to the management of customer identity, access, consent, and retail media to optimize marketing efforts and drive sales.'
+        metadata {
+            Parent 'Marketing & Engagement'
+        }
+    }
+    customerNotifications = capability {
+        title 'Customer Notifications'
+        description 'Tools and procedures related to the management of customer notifications to keep customers informed about their orders, promotions, and other relevant information.'
+        metadata {
+            Parent 'Sales & Order Management'
+        }
+    }
+    customerOrder = capability {
+        title 'Customer Order'
+        description 'Tools and procedures related to the management of customer orders, including order processing, payment, and order tracking.'
+        metadata {
+            Parent 'Sales & Order Management'
+        }
+    }
+    salesOrderManagement = capability {
+        title 'Sales Order Management'
+        description 'Tools and procedures related to the management of sales orders, including order processing, payment, and order tracking.'
+        metadata {
+            Parent 'Sales & Order Management'
+        }
+    }
+    orderManagement = capability {
+        title 'Order Management'
+        description 'Tools and procedures related to the management of orders, including order processing, payment, and order tracking.'
+        metadata {
+            Parent 'Sales & Order Management'
+        }
+    }
+    payments = capability {
+        title 'Payments'
+        description 'Tools and procedures related to the management of payments, including payment processing, fraud detection, and payment reconciliation.'
+        metadata {
+            Parent 'Sales & Order Management'
+        }
+    }
+    inventoryAndAvailability = capability {
+        title 'Inventory & Availability'
+        description 'Tools and procedures related to the management of inventory and availability to ensure that products are in stock and available for customers to purchase.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    availabilityAndShipping = capability {
+        title 'Availability & Shipping'
+        description 'Tools and procedures related to the management of availability and shipping to ensure that products are delivered to customers in a timely manner.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    warehouseManagement = capability {
+        title 'Warehouse Management'
+        description 'Tools and procedures related to the management of warehouse operations, including inventory storage, picking, packing, and shipping.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    transportManagement = capability {
+        title 'Transport Management'
+        description 'Tools and procedures related to the management of transportation operations, including carrier selection, route optimization, and delivery tracking.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    shippingAggregator = capability {
+        title 'Shipping Aggregator'
+        description 'Tools and procedures related to the management of shipping aggregation to optimize shipping costs and delivery times.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    storeInventory = capability {
+        title 'Store Inventory'
+        description 'Tools and procedures related to the management of store inventory to ensure that products are in stock and available for customers to purchase.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    storeInformation = capability {
+        title 'Store Information'
+        description 'Tools and procedures related to the management of store information, including store locations, hours of operation, and contact information.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    foodManagement = capability {
+        title 'Food Management'
+        description 'Tools and procedures related to the management of food products, including inventory management, expiration tracking, and food safety compliance.'
+        metadata {
+            Parent 'Fulfillment & Logistics'
+        }
+    }
+    sellerManagement = capability {
+        title 'Seller Management'
+        description 'Tools and procedures related to the management of sellers in a marketplace, including seller onboarding, performance monitoring, and dispute resolution.'
+        metadata {
+            Parent 'Marketplace Operations'
+        }
+    }
+    sellerOrders = capability {
+        title 'Seller Orders'
+        description 'Tools and procedures related to the management of seller orders in a marketplace, including order processing, payment, and order tracking.'
+        metadata {
+            Parent 'Marketplace Operations'
+        }
+    }
+    sellerShipment = capability {
+        title 'Seller Shipment'
+        description 'Tools and procedures related to the management of seller shipments in a marketplace, including shipping label generation, carrier selection, and delivery tracking.'
+        metadata {
+            Parent 'Marketplace Operations'
+        }
+    }
+    marketplaceAggregator = capability {
+        title 'Marketplace Aggregator'
+        description 'Tools and procedures related to the management of marketplace aggregation to optimize marketplace operations and drive sales.'
+        metadata {
+            Parent 'Marketplace Operations'
+        }
+    }
+    partnersManagement = capability {
+        title 'Partners Management'
+        description 'Tools and procedures related to the management of partners in a marketplace, including partner onboarding, performance monitoring, and dispute resolution.'
+        metadata {
+            Parent 'Marketplace Operations'
+        }
+    }
+    customerRelationshipManagement = capability {
+        title 'Customer Relationship Management'
+        description 'Tools and procedures related to the management of customer relationships, including customer support, feedback management, and customer retention strategies.'
+        metadata {
+            Parent 'Customer Service'
+        }
+    }
+    caseManagementRetail = capability {
+        title 'Case Management & Retail'
+        description 'Tools and procedures related to the management of customer cases and retail media to optimize customer service efforts and drive sales.'
+        metadata {
+            Parent 'Customer Service'
+        }
+    }
+    contactCenterRetail = capability {
+        title 'Contact Center & Retail'
+        description 'Tools and procedures related to the management of contact center operations and retail media to optimize customer service efforts and drive sales.'
+        metadata {
+            Parent 'Customer Service'
+        }
+    }
+    feedbackAndVoCRetail = capability {
+        title 'Feedback & VoC & Retail'
+        description 'Tools and procedures related to the management of customer feedback, voice of the customer, and retail media to optimize customer service efforts and drive sales.'
+        metadata {
+            Parent 'Customer Service'
+        }
+    }
+    customerOrchestratorManagement = capability {
+        title 'Customer Orchestrator Management'
+        description 'Tools and procedures related to the management of customer orchestrators to optimize customer service efforts and drive sales.'
+        metadata {
+            Parent 'Customer Service'
+        }
+    }
+    platformsAndUtilitiesManagement = capability {
+        title 'Platforms & Utilities Management'
+        description 'Tools and procedures related to the management of platforms and utilities that support digital commerce operations, such as content delivery networks, payment gateways, and analytics platforms.'
+        metadata {
+            Parent 'Platform Enablers'
+        }
+    }
+    thirdPartyIntegration = capability {
+        title 'Third-Party Integration'
+        description 'Tools and procedures related to the management of third-party integrations to enhance digital commerce capabilities and drive sales.'
+        metadata {
+            Parent 'Platform Enablers'
+        }
+    }
+    dataProcessing = capability {
+        title 'Data Processing'
+        description 'Tools and procedures related to the management of data processing to optimize digital commerce operations and drive sales.'
+        metadata {
+            Parent 'Platform Enablers'
+        }
+    }
+    documentManagement = capability {
+        title 'Document Management'
+        description 'Tools and procedures related to the management of documents to support digital commerce operations, such as invoices, receipts, and shipping labels.'
+        metadata {
+            Parent 'Platform Enablers'
+        }
+    }
+    customerPolicyManagement = capability {
+        title 'Customer Policy Management'
+        description 'Tools and procedures related to the management of customer policies to ensure compliance with regulations and optimize customer service efforts.'
+        metadata {
+            Parent 'Platform Enablers'
+        }
+    }
     /**********************************************************************
         STRUCTURAL RELATION (según metamodelo soportado)
     **********************************************************************/
+
+    digitalCommerce -[containsCapability]-> digitalStorefrontAndChannels "Contains Capability"
+    digitalCommerce -[containsCapability]-> productAndMerchandising "Contains Capability"
+    digitalCommerce -[containsCapability]-> marketingAndEngagement "Contains Capability"
+    digitalCommerce -[containsCapability]-> salesAndOrderManagement "Contains Capability"
+    digitalCommerce -[containsCapability]-> fulfillmentAndLogistics "Contains Capability"
+    digitalCommerce -[containsCapability]-> marketplaceOperations "Contains Capability"
+    digitalCommerce -[containsCapability]-> customerService "Contains Capability"
+    digitalCommerce -[containsCapability]-> platformEnablers "Contains Capability"
+
+    digitalStorefrontAndChannels -[containsCapability]-> webEcommerce "Contains Capability"
+    digitalStorefrontAndChannels -[containsCapability]-> mobileApps "Contains Capability"
+    digitalStorefrontAndChannels -[containsCapability]-> search "Contains Capability"
+    digitalStorefrontAndChannels -[containsCapability]-> cart "Contains Capability"
+    digitalStorefrontAndChannels -[containsCapability]-> recommendations "Contains Capability"
+    digitalStorefrontAndChannels -[containsCapability]-> digitalSupportInStore "Contains Capability"
+
+    productAndMerchandising -[containsCapability]-> productCatalog "Contains Capability"
+    productAndMerchandising -[containsCapability]-> priceManagement "Contains Capability"
+    productAndMerchandising -[containsCapability]-> priceandOffering "Contains Capability"
+
+    marketingAndEngagement -[containsCapability]-> promotions "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> contentManagement "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> campaignOrchestrationRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> socialMarketingRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> displayAndSearchMarketingRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> marketingContentRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> audienceTargeting "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> loyaltyRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> customerAccountAndPreferencesRetail "Contains Capability"
+    marketingAndEngagement -[containsCapability]-> customerIdentityAccessAndConsentRetail "Contains Capability"
+
+    salesAndOrderManagement -[containsCapability]-> customerNotifications "Contains Capability"
+    salesAndOrderManagement -[containsCapability]-> customerOrder "Contains Capability"
+    salesAndOrderManagement -[containsCapability]-> salesOrderManagement "Contains Capability"
+    salesAndOrderManagement -[containsCapability]-> orderManagement "Contains Capability"
+    salesAndOrderManagement -[containsCapability]-> payments "Contains Capability"
+    salesAndOrderManagement -[containsCapability]-> billing "Contains Capability"
+
+    fulfillmentAndLogistics -[containsCapability]-> inventoryAndAvailability "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> availabilityAndShipping "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> warehouseManagement "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> transportManagement "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> shippingAggregator "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> storeInventory "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> storeInformation "Contains Capability"
+    fulfillmentAndLogistics -[containsCapability]-> foodManagement "Contains Capability"
+
+    marketplaceOperations -[containsCapability]-> sellerManagement "Contains Capability"
+    marketplaceOperations -[containsCapability]-> sellerOrders "Contains Capability"
+    marketplaceOperations -[containsCapability]-> sellerShipment "Contains Capability"
+    marketplaceOperations -[containsCapability]-> marketplaceAggregator "Contains Capability"
+    marketplaceOperations -[containsCapability]-> partnersManagement "Contains Capability"
+
+    customerService -[containsCapability]-> customerRelationshipManagement "Contains Capability"
+    customerService -[containsCapability]-> caseManagementRetail "Contains Capability"
+    customerService -[containsCapability]-> contactCenterRetail "Contains Capability"
+    customerService -[containsCapability]-> feedbackAndVoCRetail "Contains Capability"
+    customerService -[containsCapability]-> customerOrchestratorManagement "Contains Capability"
+
+    platformEnablers -[containsCapability]-> platformsAndUtilitiesManagement "Contains Capability"
+    platformEnablers -[containsCapability]-> thirdPartyIntegration "Contains Capability"
+    platformEnablers -[containsCapability]-> dataProcessing "Contains Capability"
+    platformEnablers -[containsCapability]-> documentManagement "Contains Capability"
+    platformEnablers -[containsCapability]-> customerPolicyManagement "Contains Capability"
 
 }

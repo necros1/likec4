@@ -13,7 +13,84 @@ views {
       }
       
     }
+   view digitalStorefrontAndChannels_L2 of digitalStorefrontAndChannels {
+      
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Digital Storefront and Channels'
+      group 'Digital Storefront and Channels'{
+         color gray
+         opacity 20%
+         border solid
+         include webEcommerce, mobileApps, search, cart, recommendations, digitalSupportInStore
+      }      
+    }
+   view productAndMerchandising_L2 of productAndMerchandising {
+      
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Product and Merchandising'
+      group 'Product and Merchandising'{
+         color gray
+         opacity 20%
+         border solid
+         include productCatalog,priceManagement,priceandOffering
+      }      
+    }
+   view marketingAndEngagement_L2 of marketingAndEngagement {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Marketing and Engagement'
+      group 'Marketing and Engagement'{
+         color gray
+         opacity 20%
+         border solid
+         include promotions, contentManagement,campaignOrchestrationRetail,socialMarketingRetail,displayAndSearchMarketingRetail,marketingContentRetail, audienceTargeting,
+         loyaltyRetail,customerAccountAndPreferencesRetail,customerIdentityAccessAndConsentRetail
+      }      
+    }
+   view salesAndOrderManagement_L2 of salesAndOrderManagement {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Sales and Order Management'
+      group 'Sales and Order Management'{
+         color gray
+         opacity 20%
+         border solid
+         include customerNotifications, customerOrder, salesOrderManagement,orderManagement,payments,billing
+      }      
+    }
 
+   view fulfillmentAndLogistics_L2 of fulfillmentAndLogistics {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Fulfillment and Logistics'
+      group 'Fulfillment and Logistics'{
+         color gray
+         opacity 20%
+         border solid
+         include inventoryAndAvailability, availabilityAndShipping,warehouseManagement,transportManagement,shippingAggregator,storeInventory,
+         storeInformation,foodManagement
+      }      
+    }
+   
+   view marketplaceOperations_L2 of marketplaceOperations {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Marketplace Operations'
+      group 'Marketplace Operations'{
+         color gray
+         opacity 20%
+         border solid
+         include sellerManagement,sellerOrders,sellerShipment,marketplaceAggregator,partnersManagement
+      }      
+    }
+   view customerService_L2 of customerService {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Customer Service'
+      group 'Customer Service'{
+         color gray
+         opacity 20%
+         border solid
+         include customerRelationshipManagement,caseManagementRetail,contactCenterRetail,feedbackAndVoCRetail,customerOrchestratorManagement
+      }      
+    }
+   view platformEnablers_L2 of platformEnablers {
+      title 'Business Capability Map / Core Business Domain / Digital Commerce / Level 2 / Platform Enablers'
+      group 'Platform Enablers'{
+         color gray
+         opacity 20%
+         border solid
+         include platformsAndUtilitiesManagement,thirdPartyIntegration,dataProcessing,documentManagement,customerPolicyManagement
+      }      
+    }
    /**********************************************************************
         CAPABILITY → APPLICATION SUPPORT VIEWS
         (Which applications support each business capability)

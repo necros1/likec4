@@ -66,15 +66,15 @@ views {
     **********************************************************************/
     view voiceOfEmployee_Applications of voiceOfEmployee {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Voice Of Employee / Supporting Applications'
-        include voiceOfEmployee,qualtrics
+        include * -[supportsCapability]-> voiceOfEmployee
     }
     view learning_Applications of learning {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Learning / Supporting Applications'
-        include learning,buk,degree,eClass,getAbstract,moodle,saba,ubits
+        include * -[supportsCapability]-> learning
     }
     view recognition_Applications of recognition {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Recognition / Supporting Applications'
-        include recognition, reconocimiento
+        include * -[supportsCapability]-> recognition
     }
     view socialNetwork_Applications of socialNetwork {
         title 'Business Capability Map / Enterprise Support / Enterprise Suppport People / Level 3 / Social Network / Supporting Applications'

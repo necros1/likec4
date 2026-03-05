@@ -6,7 +6,7 @@ model {
     metadata {
       FAI 'APP02590'
     }
-    qualtrics -[usesCapability]-> voiceOfEmployee
+    qualtrics -[supportsCapability]-> voiceOfEmployee "Supports"
   }
 
   relojbiometricoSpr = system {
@@ -18,7 +18,7 @@ model {
       Codebase 'Build'
       Delivery 'On-Site'
     }
-    relojbiometricoSpr -[usesCapability]-> timeAndAttendance
+    relojbiometricoSpr -[supportsCapability]-> timeAndAttendance "Supports"
   }
 
   saba = system 'Saba'{
@@ -27,7 +27,7 @@ model {
     metadata {
       FAI 'APP00764'
     }
-    saba -[usesCapability]-> learning
+    saba -[supportsCapability]-> learning "Supports"
   }
 
   firmaElectronicaPersonalInterno = system 'Firma Electrónica Personal Interno'{
@@ -36,7 +36,7 @@ model {
     metadata {
       FAI 'APP01645'
     }
-    firmaElectronicaPersonalInterno -[usesCapability]-> electronicSign
+    firmaElectronicaPersonalInterno -[supportsCapability]-> electronicSign "Supports"
   }
 
   sapNomina = system 'SAP Nómina'{
@@ -45,7 +45,7 @@ model {
     metadata {
       FAI 'APP00166'
     }
-    sapNomina -[usesCapability]-> payrollCapability
+    sapNomina -[supportsCapability]-> payrollCapability "Supports"
   }
 
   falanetApp = system 'Falanet (App)'{
@@ -54,7 +54,7 @@ model {
     metadata {
       FAI 'APP00284'
     }
-    falanetApp -[usesCapability]-> caseManagementPeople
+    falanetApp -[supportsCapability]-> caseManagementPeople "Supports"
   }
 
   relojesMarcadoresPe = system 'Relojes Marcadores PE'{
@@ -63,7 +63,7 @@ model {
     metadata {
       FAI 'APP00307'
     }
-    relojesMarcadoresPe -[usesCapability]-> timeAndAttendance
+    relojesMarcadoresPe -[supportsCapability]-> timeAndAttendance "Supports"
   }
 
   miFalabella = system 'Mi Falabella'{
@@ -72,7 +72,7 @@ model {
     metadata {
       FAI 'APP02588'
     }
-    miFalabella -[usesCapability]-> erm
+    miFalabella -[supportsCapability]-> erm "Supports"
   }
 
   firmaElectronicabyFalabella = system 'Firma Electronica by Falabella'{
@@ -81,7 +81,7 @@ model {
     metadata {
       FAI 'APP03053'
     }
-    firmaElectronicabyFalabella -[usesCapability]-> electronicSign
+    firmaElectronicabyFalabella -[supportsCapability]-> electronicSign "Supports"
   }
 
   portalBeneficios = system 'Portal Beneficios'{
@@ -90,7 +90,7 @@ model {
     metadata {
       FAI 'APP02779'
     }
-    portalBeneficios -[usesCapability]-> benefits
+    portalBeneficios -[supportsCapability]-> benefits "Supports"
   }
 
   payflow = system 'Payflow'{
@@ -99,7 +99,7 @@ model {
     metadata {
       FAI 'APP02593'
     }
-    payflow -[usesCapability]-> payrollCapability
+    payflow -[supportsCapability]-> payrollCapability "Supports"
   }
 
   haciendoEscuela = system 'Haciendo Escuela'{
@@ -108,7 +108,7 @@ model {
     metadata {
       FAI 'APP02592'
     }
-    haciendoEscuela -[usesCapability]-> volunteerWork
+    haciendoEscuela -[supportsCapability]-> volunteerWork "Supports"
   }
 
   
@@ -119,7 +119,7 @@ model {
     metadata {
       FAI 'APP02481'
     }
-    reconocimiento -[usesCapability]-> recognition
+    reconocimiento -[supportsCapability]-> recognition "Supports"
   }
 
   vivaEngage = system 'Viva Engage'{
@@ -128,7 +128,7 @@ model {
     metadata {
       FAI 'APP02267'
     }
-    vivaEngage -[usesCapability]-> socialNetwork
+    vivaEngage -[supportsCapability]-> socialNetwork "Supports"
   }
   
   eSign = system 'eSign'{
@@ -137,7 +137,7 @@ model {
     metadata {
       FAI 'APP02045'
     }
-    eSign -[usesCapability]-> electronicSign
+    eSign -[supportsCapability]-> electronicSign "Supports"
   }
   
   portalEmpleados = system 'Portal Empleados'{
@@ -146,7 +146,7 @@ model {
     metadata {
       FAI 'APP02043'
     }
-    portalEmpleados -[usesCapability]-> caseManagementPeople
+    portalEmpleados -[supportsCapability]-> caseManagementPeople "Supports"
   }
 
   degree = system 'Degree'{
@@ -155,7 +155,7 @@ model {
     metadata {
       FAI 'APP01968'
     }
-    degree -[usesCapability]-> learning
+    degree -[supportsCapability]-> learning "Supports"
   }
   
   wimper = system 'Wimper'{
@@ -164,8 +164,8 @@ model {
     metadata {
       FAI 'APP01967'
     }
-    wimper -[usesCapability]-> learning
-    wimper -[usesCapability]-> payrollCapability
+    wimper -[supportsCapability]-> learning "Supports"
+    wimper -[supportsCapability]-> payrollCapability "Supports"
   }
 
   ubits = system 'Ubits'{
@@ -174,7 +174,7 @@ model {
     metadata {
       FAI 'APP01712'
     }
-    ubits -[usesCapability]-> learning
+    ubits -[supportsCapability]-> learning "Supports"
   }
 
   muevete = system 'Muevete'{
@@ -183,7 +183,7 @@ model {
     metadata {
       FAI 'APP01217'
     }
-    muevete -[usesCapability]-> attraction
+    muevete -[supportsCapability]-> attraction "Supports"
   }
 
   trabajandoCom = system 'Trabajando.com'{
@@ -192,7 +192,7 @@ model {
     metadata {
       FAI 'APP00999'
     }
-    trabajandoCom -[usesCapability]-> onBoarding
+    trabajandoCom -[supportsCapability]-> onBoarding "Supports"
   }
 
   rankmi = system 'Rankmi'{
@@ -201,7 +201,7 @@ model {
     metadata {
       FAI 'APP00955'
     }
-    rankmi -[usesCapability]-> performance
+    rankmi -[supportsCapability]-> performance "Supports"
   }
 
   payroll = system 'payroll'{
@@ -211,7 +211,7 @@ model {
       FAI 'APP00934'
       LifeCycle 'Deprecar'
     }
-    payroll -[usesCapability]-> payrollCapability
+    payroll -[supportsCapability]-> payrollCapability "Supports"
   }
 
   getAbstract = system 'Get Abstract'{
@@ -220,7 +220,7 @@ model {
     metadata {
       FAI 'APP00909'
     }
-    getAbstract -[usesCapability]-> learning
+    getAbstract -[supportsCapability]-> learning "Supports"
   }
 
   eClass = system 'e-Class'{
@@ -229,7 +229,7 @@ model {
     metadata {
       FAI 'APP00904'
     }
-    eClass -[usesCapability]-> learning
+    eClass -[supportsCapability]-> learning "Supports"
   }
 
   sysnel = system 'Sysnel'{
@@ -239,7 +239,7 @@ model {
       FAI 'APP00863'
       LifeCycle 'Deprecar'
     }
-    sysnel -[usesCapability]-> timeAndAttendance
+    sysnel -[supportsCapability]-> timeAndAttendance "Supports"
   }
   
   nomiplus = system 'Nomiplus'{
@@ -249,7 +249,7 @@ model {
       FAI 'APP00698'
       LifeCycle 'Mantener/Evolucionar'
     }
-    nomiplus -[usesCapability]-> payrollCapability
+    nomiplus -[supportsCapability]-> payrollCapability "Supports"
   }
 
   sorianaRelojControl = system 'Soriana Reloj Control'{
@@ -258,7 +258,7 @@ model {
     metadata {
       FAI 'APP00313'
     }
-    sorianaRelojControl -[usesCapability]-> timeAndAttendance
+    sorianaRelojControl -[supportsCapability]-> timeAndAttendance "Supports"
   }
 
   moodle = system 'Moodle'{
@@ -267,7 +267,7 @@ model {
     metadata {
       FAI 'APP00301'
     }
-    moodle -[usesCapability]-> learning
+    moodle -[supportsCapability]-> learning "Supports"
   }
 
   controlDeAsistencias = system 'Control de Asistencias - ASIS'{
@@ -277,7 +277,7 @@ model {
       FAI 'APP00286'
       LifeCycle 'Retirar'
     }
-    controlDeAsistencias -[usesCapability]-> timeAndAttendance
+    controlDeAsistencias -[supportsCapability]-> timeAndAttendance "Supports"
   }
 
   chatbotCorporativoBella = system 'Chatbot Corporativo BELLA'{
@@ -287,7 +287,7 @@ model {
       FAI 'APP02693'
       LifeCycle 'Implementar'
     }
-    chatbotCorporativoBella -[usesCapability]-> chatBotPeople
+    chatbotCorporativoBella -[supportsCapability]-> chatBotPeople "Supports"
   }
 
   buk = system 'BUK'{
@@ -297,7 +297,7 @@ model {
       FAI 'APP02589'
       LifeCycle 'Implementar'
     }
-    buk -[usesCapability]-> learning
+    buk -[supportsCapability]-> learning "Supports"
   }
   asistenteDeCalibracion = system 'Asistente de Calibración' {
     #people
@@ -305,79 +305,79 @@ model {
     metadata {
       FAI 'APP03163'
     }
-    asistenteDeCalibracion -[usesCapability]-> performance
+    asistenteDeCalibracion -[supportsCapability]-> performance "Supports"
   }
   administracionCartera = system 'Administración de Cartera'{
     #people
     description 'Funcionalidad asociada a los convenios que el banco tiene con los funcionarios para los créditos que ellos toman con tasas preferentes, en donde se descuelgan o vinculan funcionarios.'
-    administracionCartera -[usesCapability]-> employeeMaster
+    administracionCartera -[supportsCapability]-> employeeMaster "Supports"
   }
   datamace = system 'Datamace' {
     #people
     description 'Sistema de Recursos Humanos para la administración del personal y para el pago de remuneraciones'
-    datamace -[usesCapability]-> employeeMaster
-    datamace -[usesCapability]-> payrollCapability
+    datamace -[supportsCapability]-> employeeMaster "Supports"
+    datamace -[supportsCapability]-> payrollCapability "Supports"
 
   }
   datapino = system 'Datapino' {
     #people
     description 'Gestión de novedades y pago de nomina a empleados|Aplicación para Gestión de Nómina de las empresas del Grupo y pago a empleados. Proveedor Digidata'
-    datapino -[usesCapability]-> employeeMaster
-    datapino -[usesCapability]-> payrollCapability
+    datapino -[supportsCapability]-> employeeMaster "Supports"
+    datapino -[supportsCapability]-> payrollCapability "Supports"
   }
   diferencialEmpleadosCajasTottus = system 'Diferencial de Empleados para Cajas Tottus' {
     #people
     description 'aplicación que recolecta archivo de empleados de los negocios de falabella Perú y realiza un cruce de datos con el archivo de empleados del dia anterior, el resultado se arma en archivos .dat compatibles para cajas y es enviado por FTP a todas las cajas de las tiendas de Tottus.'
-    diferencialEmpleadosCajasTottus -[usesCapability]-> employeeMaster
+    diferencialEmpleadosCajasTottus -[supportsCapability]-> employeeMaster "Supports"
   }
   intranetMiCasa = system 'Intranet Mi Casa' {
     #people
     description 'Reemplaza Intranet Corporativa Sodimac'
-    intranetMiCasa -[usesCapability]-> employeeMaster
+    intranetMiCasa -[supportsCapability]-> employeeMaster "Supports"
   }
   ocupacionalSSO = system 'Ocupacional- SSO' {
     #people
     description 'Sistema de Gestión de Salud y Seguridad Ocupacional (SSO)'
-    ocupacionalSSO -[usesCapability]-> employeeMaster
-    ocupacionalSSO -[usesCapability]-> benefits
+    ocupacionalSSO -[supportsCapability]-> employeeMaster "Supports"
+    ocupacionalSSO -[supportsCapability]-> benefits "Supports"
   }
   ofisisSmart = system 'Ofisis Smart' {
     #people
     description 'Plataforma de personal, remuneraciones y asistencia'
-    ofisisSmart -[usesCapability]-> employeeMaster
-    ofisisSmart -[usesCapability]-> timeAndAttendance
-    ofisisSmart -[usesCapability]-> payrollCapability
+    ofisisSmart -[supportsCapability]-> employeeMaster "Supports"
+    ofisisSmart -[supportsCapability]-> timeAndAttendance "Supports"
+    ofisisSmart -[supportsCapability]-> payrollCapability "Supports"
   }
   spr = system 'Personal y Remuneraciones - SPR' {
     #people, #APP00314,#Critical
     description 'Sistema de Personal y Remuneraciones.Evaluación Puestos Claves.Triple Pack (contratos/Renovación/Finiquito).Evaluación de desempeño. FMC Formulario de modificación Contractual . Adm y gestión del Personal. Remuneraciones. AutoConsulta.Vendedores a POS / descuento Institucional. Workflow de Vacaciones.'
-    spr -[usesCapability]-> employeeMaster
+    spr -[supportsCapability]-> employeeMaster "Supports"
   }
   planillaEjecutivos = system 'Planilla Ejecutivos (Fox Pro)'{
     #people
     description 'Sistema de planilla de ejecutivos para Saga Falabella - Perú. Solo contempla nóminas. En tecnología Fox Pro con DBFs.. (pasa a pre-apagado)'
-    planillaEjecutivos -[usesCapability]-> employeeMaster
+    planillaEjecutivos -[supportsCapability]-> employeeMaster "Supports"
   }
   sprSaas = system 'Personal y Remuneraciones - SPR Saas' {
     #people
     description 'Sistema de Personal y Remuneraciones.Evaluación Puestos Claves.Triple Pack (contratos/Renovación/Finiquito).Evaluación de desempeño. FMC Formulario de modificación Contractual . Adm y gestión del Personal. Remuneraciones. AutoConsulta.Vendedores a POS / descuento Institucional. Workflow de Vacaciones.. Sistema tipo SaaS.'
-    sprSaas -[usesCapability]-> employeeMaster
+    sprSaas -[supportsCapability]-> employeeMaster "Supports"
   }
   nomina = system 'SAP_corp / SAP Nómina' {
     #people
     description 'Modulo SAP para gestión de recursos humanos. (En nuestra planificación seguirá vivo hasta 2028 al menos)'
-    nomina -[usesCapability]-> employeeMaster
+    nomina -[supportsCapability]-> employeeMaster "Supports"
   }
   sprWeb = system 'SPR-WEB' {
     #people
     description 'Desarrollos Java para aplicaciones de RRHH en el portal Falanet, especialmente conectado a la base de SPR, con lo que se han creado modulos de autoatención y workflow, desde solicitud de vacaiones, firma de documentos laborales, workflow de prestamos, informes de comisiones, formularios de modificación contractual, beneficios flexibles,'
-    sprWeb -[usesCapability]-> employeeMaster
+    sprWeb -[supportsCapability]-> employeeMaster "Supports"
   }
   empleadoCentral = system 'SAP SF Employee Central' {
     #people, #APP00281
     description 'Sistema de administración de personal (en la nube)Sistema de reclutamiento y selección, tanto interno como externoMódulo de perfil de la plataforma del grupo Falabella de SSFF'
     
-    empleadoCentral -[usesCapability]-> organizationalDesign
+    empleadoCentral -[supportsCapability]-> organizationalDesign "Supports"
 
     empleadoCentral -[usesApplication]-> geoVictoria 
     empleadoCentral -[usesApplication]-> spr
@@ -391,27 +391,27 @@ model {
       FAI 'APP02046'
       LifeCycle 'Mantener/Evolucionar'
     }
-    adobeSign -[usesCapability]-> documents
+    adobeSign -[supportsCapability]-> documents "Supports"
   }
 
   gestorDocumentosCorporativoHyland = system 'Gestor De Documentos Corporativo-Hyland' {
     #people
     description 'Document repository for contracts, attendance tickets'
-    gestorDocumentosCorporativoHyland -[usesCapability]-> documents
+    gestorDocumentosCorporativoHyland -[supportsCapability]-> documents "Supports"
   }
 
   catalyst = system 'Catalyst' {
     #APP00848,#purchase
-    -> ac 'uses'
+    -> accountingGateway 'uses'
   }
   saperp = system 'SAP ERP'{
     #APP00201,#finance, #Critical
     -> b2bf 'uses'
   }
-  ac = system 'Accounting Gateway' {
-    #APP01781, #post-purchase
-    -> saperp 'uses'
-  }
+  // ac = system 'Accounting Gateway' {
+  //   #post-purchase
+  //   -> saperp 'uses'
+  // }
   fbc = system 'Falabella Business Center (FBC)' {
     #APP02696, #Planning-Sourcing
     -> vpf 'uses'
@@ -446,7 +446,7 @@ model {
   geoVictoria = system 'GeoVictoria' { 
       #people, #APP02485
       description 'Asistencia Corporativa'
-      geoVictoria -[usesCapability]-> timeAndAttendance
+      geoVictoria -[supportsCapability]-> timeAndAttendance "Supports"
   }
   
   employeeCentralPayroll = system 'Employee Central Payroll' {  
@@ -454,7 +454,7 @@ model {
     metadata {
       FAI 'APP02594'
     }
-    employeeCentralPayroll -[usesCapability]-> payrollCapability
+    employeeCentralPayroll -[supportsCapability]-> payrollCapability "Supports"
   }
   aira = system 'Aira' { 
     #people

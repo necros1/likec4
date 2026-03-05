@@ -1,0 +1,578 @@
+//systems.post-purchase.c4
+model {
+    /**********************************************************************
+        SYSTEMS - DIGITAL COMMERCE - POST PURCHASE
+    **********************************************************************/
+
+    integraPlataformaAutogestion = system 'Integra plataforma autogetión' {
+        #post-purchase
+        description 'Integra es una plataforma de autogestion diseñada para los empleados de Falabella Retail. Ofrece distintos modulos a los que los usuarios pueden acceder segun sus roles y permisos asignados. Entre las principales funcionalidades, se incluyen: Solicitud de permisos Prestamos Solicitud de retiro de cesantias Creacion de incapacidades Ademas, cuenta con muchas otras herramientas que facilitan la gestion de tramites y procesos internos.'
+        metadata {
+            FAI 'APP00014'
+            Delivery 'On-Site'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+      integraPlataformaAutogestion -[supportsCapability]-> learning "Supports"
+    }
+
+
+    b2cPortalTottus = system 'B2C - Portal Tottus' {
+      #post-purchase
+        metadata {
+            FAI 'APP00023'
+            Delivery 'On-Site'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    abmClient = system 'ABM Client' {
+      #post-purchase
+        metadata {
+            FAI 'APP00031'
+            Delivery 'On-Site'
+            Codebase 'Build'
+            Lifecycle 'Deprecar'
+        }
+    }
+
+    medallia = system 'Medallia' {
+      #post-purchase
+        metadata {
+            FAI 'APP00046'
+            Delivery 'SaaS'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    falabellaMobile = system 'Falabella Mobile' {
+      #post-purchase
+        metadata {
+            FAI 'APP00087'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    vtexCrateBarrel = system 'VTEX-Crate&Barrel' {
+      #post-purchase
+        metadata {
+            FAI 'APP00106'
+            Delivery 'Private Cloud Service'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    libroReclamaciones = system 'Libro de Reclamaciones' {
+      #post-purchase
+        metadata {
+            FAI 'APP00111'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    zohoCom = system 'Zoho.com' {
+      #post-purchase
+        metadata {
+            FAI 'APP00113'
+            Delivery 'Private Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    salesforceMarketingCloud = system 'Salesforce Marketing Cloud' {
+      #post-purchase
+        metadata {
+            FAI 'APP00336'
+            Delivery 'Public Cloud Service'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    sapf = system 'SAPF' {
+      #post-purchase
+        metadata {
+            FAI 'APP00344'
+            Delivery 'Private Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    cuadraturaPreciosArs = system 'Cuadratura de precios ARS' {
+      #post-purchase
+        metadata {
+            FAI 'APP00355'
+            Delivery 'On-Site'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    cuadraturaPreciosAtg = system 'Cuadratura de precios ATG' {
+      #post-purchase
+        metadata {
+            FAI 'APP00356'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    anaconda = system 'Anaconda' {
+      #post-purchase
+        metadata {
+            FAI 'APP00418'
+            Delivery 'Private Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    asl = system 'ASL' {
+      #post-purchase
+        metadata {
+            FAI 'APP00438'
+            Delivery 'On-Site'
+            Codebase 'Build'
+            Lifecycle 'Retirar'
+        }
+    }
+
+    gestionIntegralRepartoWebtracking = system 'Gestion Integral de Reparto - Webtracking' {
+      #post-purchase
+        metadata {
+            FAI 'APP00448'
+            Delivery 'On-Site'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    hermes = system 'Hermes' {
+      #post-purchase
+        metadata {
+            FAI 'APP01378'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Deprecar'
+        }
+    }
+
+    oroCrm = system 'Oro CRM' {
+      #post-purchase
+        metadata {
+            FAI 'APP01773'
+            Delivery 'On-Site'
+            Codebase 'Build'
+            Lifecycle 'Deprecar'
+        }
+    }
+
+    accountingGateway = system 'Accounting Gateway' {
+      #post-purchase
+        metadata {
+            FAI 'APP01781'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    salesforceCrmLinio = system 'Salesforce CRM Linio' {
+      #post-purchase
+        metadata {
+            FAI 'APP01783'
+            Delivery 'SaaS'
+            Codebase 'Packaged'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    salesSystem = system 'Sales' {
+      #post-purchase
+        metadata {
+            FAI 'APP01832'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+        }
+    }
+
+    sellerSettlements = system 'Seller Settlements' {
+      #post-purchase
+        metadata {
+            FAI 'APP01833'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    invoicesMkp = system 'Invoices(MKP)' {
+      #post-purchase
+        metadata {
+            FAI 'APP01834'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+        }
+    }
+
+    sellerOrder = system 'Seller Order' {
+      #post-purchase
+        metadata {
+            FAI 'APP01835'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    coreOrder = system 'Core Order' {
+      #post-purchase
+        metadata {
+            FAI 'APP01836'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    mkoo = system 'Marketplace Order Orchestrator MKOO' {
+      #post-purchase
+        metadata {
+            FAI 'APP01837'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    fscWebModule = system 'Finance and Payments web module FSC' {
+      #post-purchase
+        metadata {
+            FAI 'APP01839'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+        }
+    }
+
+    salesforceServiceCloud = system 'SalesForce Service Cloud' {
+      #post-purchase
+        metadata {
+            FAI 'APP01915'
+            Delivery 'Public Cloud Service'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    jarvisLandingPage = system 'Jarvis landing page' {
+      #post-purchase
+        metadata {
+            FAI 'APP02028'
+            Delivery 'Public Cloud Service'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    boss = system 'BOSS' {
+      #post-purchase
+        metadata {
+            FAI 'APP02135'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Deprecar'
+        }
+    }
+
+    myAccount = system 'My Account' {
+      #post-purchase
+        metadata {
+            FAI 'APP02300'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    myCasesBff = system 'My Cases BFF' {
+      #post-purchase
+        metadata {
+            FAI 'APP02311'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    myCasesFront = system 'My Cases Front' {
+      #post-purchase
+        metadata {
+            FAI 'APP02318'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    salesforceCustomerSodimac = system 'Saleforce Customer Sodimac' {
+      #post-purchase
+        metadata {
+            FAI 'APP02319'
+            Delivery 'SaaS'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    controlTower = system 'Control Tower' {
+      #post-purchase
+        metadata {
+            FAI 'APP02324'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    customerPolicies = system 'Customer Policies' {
+      #post-purchase
+        metadata {
+            FAI 'APP02325'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    customerOrchestrator = system 'Customer Orchestrator' {
+      #post-purchase
+        metadata {
+            FAI 'APP02326'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    customerNotificationsSystem = system 'Customer Notifications' {
+      #post-purchase
+        metadata {
+            FAI 'APP02327'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    aclEntities = system 'ACL Entities' {
+      #post-purchase
+        metadata {
+            FAI 'APP02328'
+            Delivery 'Public Cloud Service'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    apiCaseManagement = system 'Api Case Management' {
+      #post-purchase
+        metadata {
+            FAI 'APP02329'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    frontCargasMasivasSf = system 'Front cargas masivas SF' {
+      #post-purchase
+        metadata {
+            FAI 'APP02331'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+        }
+    }
+
+    bffSodimac = system 'BFF de Sodimac' {
+      #post-purchase
+        metadata {
+            FAI 'APP02332'
+            Delivery 'Public Cloud Service'
+            Codebase 'Buy'
+        }
+    }
+
+    botSernac = system 'Bot de Sernac' {
+      #post-purchase
+        metadata {
+            FAI 'APP02333'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    returnsOrder = system 'Returns Order' {
+      #post-purchase
+        metadata {
+            FAI 'APP02334'
+            Delivery 'Public Cloud Service'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    cargaMasivaSf = system 'Carga Masiva SF' {
+      #post-purchase
+        metadata {
+            FAI 'APP02335'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    myPurchase = system 'My Purchase' {
+      #post-purchase
+        metadata {
+            FAI 'APP02342'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    customerOrderSystem = system 'Customer Order' {
+      #post-purchase
+        metadata {
+            FAI 'APP02386'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Pilot'
+        }
+    }
+
+    coreShipment = system 'core shipment' {
+      #post-purchase
+        metadata {
+            FAI 'APP02428'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    sequenceGenerator = system 'sequence generator' {
+      #post-purchase
+        metadata {
+            FAI 'APP02431'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    refundPolicies = system 'Refund Policies' {
+      #post-purchase
+        metadata {
+            FAI 'APP02432'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    retailSalesOrchestrator = system 'Retail Sales Orchestrator' {
+      #post-purchase
+        metadata {
+            FAI 'APP02584'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    myOrders = system 'My Orders' {
+      #post-purchase
+        metadata {
+            FAI 'APP02701'
+            Delivery 'SaaS'
+            Codebase 'Build'
+        }
+    }
+
+    ivrPagoKmaleon = system 'IVR PAGO K-Maleon' {
+      #post-purchase
+        metadata {
+            FAI 'APP02716'
+            Delivery 'On-Site'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    ngOrders = system 'ng orders' {
+      #post-purchase
+        metadata {
+            FAI 'APP02777'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    ivrHelpCenterGenAi = system 'IVR Help center GenAI' {
+      #post-purchase
+        metadata {
+            FAI 'APP02798'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    automationBots = system 'Automation Bots' {
+      #post-purchase
+        metadata {
+            FAI 'APP02800'
+            Delivery 'Public Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    sodimacCancelaciones = system 'Sodimac Cancelaciones' {
+      #post-purchase
+        metadata {
+            FAI 'APP02897'
+            Delivery 'SaaS'
+            Codebase 'Buy'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+
+    genuine = system 'Genuine' {
+      #post-purchase
+        metadata {
+            FAI 'APP03017'
+            Delivery 'SaaS'
+            Lifecycle 'Pilot'
+        }
+    }
+
+    bushido = system 'Bushido' {
+      #post-purchase
+        metadata {
+            FAI 'APP03064'
+            Delivery 'Private Cloud Service'
+            Codebase 'Build'
+            Lifecycle 'Mantener/Evolucionar'
+        }
+    }
+}

@@ -5,11 +5,9 @@ specification {
     color blue // Azul profundo para soporte tecnológico
   }
 
-  relationship usesCapability
   relationship usesApplication
 
   tag Critical
-
   tag finance
   tag people
   tag Vendor-Fullfilment-Inventory-Cost

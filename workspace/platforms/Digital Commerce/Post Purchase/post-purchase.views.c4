@@ -1,0 +1,16 @@
+views {
+    /**********************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE
+    **********************************************************************/
+    view postPurchaseSystems {
+      
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / Integra Plataforma Autogestion / C4 Level 1'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         include integraPlataformaAutogestion
+         
+      }
+    }
+}

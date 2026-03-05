@@ -5,7 +5,7 @@ model {
             color gray
             size small
         }
-        linkedIn -[usesCapability]-> attraction
+        linkedIn -[supportsCapability]-> attraction "Supports"
     }
     system datalake {
         description 'Finance Datalake' 
