@@ -3,14 +3,45 @@ views {
         SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE
     **********************************************************************/
     view postPurchaseSystems {
-      
+      title 'Platforms / Digital Commerce / Post Purchase / Systems'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         include element.tag = #post-purchase
+      }
+    }
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - INTEGRA PLATAFORMA AUTOGESTION
+    ********************************************************************************************************/
+    view integraPlataformaAutogestion_Supports_Capabilities of integraPlataformaAutogestion {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / Integra Plataforma Autogestion / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         include integraPlataformaAutogestion -[supportsCapability]-> *
+      }
+    }
+    view integraPlataformaAutogestion_c4_level1 of integraPlataformaAutogestion {
       title 'Platforms / Digital Commerce / Post Purchase / Systems / Integra Plataforma Autogestion / C4 Level 1'
       group 'Post Purchase'{
          color gray
          opacity 20%
          border solid
          include integraPlataformaAutogestion
-         
+      }
+    }
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - VTEX-Crate&Barrel
+    ********************************************************************************************************/
+    view vtexCrateBarrel_Supports_Capabilities of vtexCrateBarrel {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / VTEX-Crate&Barrel / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         include vtexCrateBarrel -[supportsCapability]-> *
       }
     }
 }

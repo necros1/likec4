@@ -1,5 +1,5 @@
 import { defineConfig } from 'likec4/config'
-// import generators from './likec4-global'
+import generators from './likec4-global'
 
 export default defineConfig({
   name: 'essential-model',

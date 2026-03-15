@@ -4,7 +4,7 @@ model {
         SYSTEMS - DIGITAL COMMERCE - POST PURCHASE
     **********************************************************************/
 
-    integraPlataformaAutogestion = system 'Integra plataforma autogetión' {
+    integraPlataformaAutogestion = system 'Integra Plataforma Autogestion' {
         #post-purchase
         description 'Integra es una plataforma de autogestion diseñada para los empleados de Falabella Retail. Ofrece distintos modulos a los que los usuarios pueden acceder segun sus roles y permisos asignados. Entre las principales funcionalidades, se incluyen: Solicitud de permisos Prestamos Solicitud de retiro de cesantias Creacion de incapacidades Ademas, cuenta con muchas otras herramientas que facilitan la gestion de tramites y procesos internos.'
         metadata {
@@ -18,50 +18,60 @@ model {
 
 
     b2cPortalTottus = system 'B2C - Portal Tottus' {
-      #post-purchase
+      #post-purchase      
         metadata {
             FAI 'APP00023'
             Delivery 'On-Site'
             Lifecycle 'Mantener/Evolucionar'
         }
+
     }
 
     abmClient = system 'ABM Client' {
       #post-purchase
+      description 'Aplicacion para el registro de Alta, Baja y Modificacion de Clientes Empresa. Aplica para todos los canales de venta.'
         metadata {
             FAI 'APP00031'
             Delivery 'On-Site'
             Codebase 'Build'
             Lifecycle 'Deprecar'
         }
+        abmClient -[supportsCapability]-> customerAccountAndPreferencesRetail "Supports"
     }
 
     medallia = system 'Medallia' {
       #post-purchase
+      description 'Gestion de encuestras. Medallia es un SaaS para la Gestion de la Experiencia Cliente (CEM Customer Experience Management) y para la Gestion de Retroalimentacion Empresarial (EFM Enterprise Feedback Management). Como parte de un CRM (o de un CRM Social), Medallia  es una plataforma de software que permite captura voz del cliente, retroalimentacion a traves de la Web, de redes sociales, mobile y de centros de contacto. Analiza esta informacion en tiempo real y entrega flujos de trabajo de accion para ejecutivos, equipos centrales y de primera linea relacionados con satisfaccion y lealtad del cliente, resultados NPS y con el rendimiento general de la empresa.En Sodimac: Usa el servidor Malasia para la transferencia ida-vuelta de archivos con Proveedores externos. Los archivos los provee Adessa. Servidor administrado por Adessa. Transferencia es via SFTP.'
         metadata {
             FAI 'APP00046'
             Delivery 'SaaS'
             Codebase 'Buy'
             Lifecycle 'Mantener/Evolucionar'
         }
+        medallia -[supportsCapability]-> feedbackAndVoCRetail "Supports"
     }
 
     falabellaMobile = system 'Falabella Mobile' {
       #post-purchase
+      description 'Aplicacion Mobile para Falabella.com'
         metadata {
             FAI 'APP00087'
             Codebase 'Build'
             Lifecycle 'Mantener/Evolucionar'
         }
+        falabellaMobile -[supportsCapability]-> mobileApps "Supports"
     }
 
     vtexCrateBarrel = system 'VTEX-Crate&Barrel' {
       #post-purchase
+      description 'Sitio Crate&Barrel'
         metadata {
             FAI 'APP00106'
             Delivery 'Private Cloud Service'
             Lifecycle 'Mantener/Evolucionar'
         }
+        vtexCrateBarrel -[supportsCapability]-> availabilityAndShipping "Supports"
+        vtexCrateBarrel -[supportsCapability]-> productCatalog "Supports"
     }
 
     libroReclamaciones = system 'Libro de Reclamaciones' {
