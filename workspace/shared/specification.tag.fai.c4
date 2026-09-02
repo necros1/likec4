@@ -16,4 +16,38 @@ specification {
   tag APP00201
   tag APP00848
   tag APP00306
+
+  tag Critical
+  // tag Vendor-Fullfilment-Inventory-Cost
+  // tag Planning-Sourcing
+  // tag post-purchase
+  // tag purchase
+
+  // tag Falabella-Chile
+  // tag Falabella-Colombia
+  
+  // tag Sodimac-Chile
+  // tag Sodimac-Uruguay
+
+  // tag deprecated {
+  //   color rgb(100 100 100)
+  // }
+
+
+  tag finance
+  tag people
+  tag Vendor-Fullfilment-Inventory-Cost
+  tag Planning-Sourcing
+  tag post-purchase
+  tag purchase
+
+  tag Falabella-Chile
+  tag Falabella-Colombia
+  
+  tag Sodimac-Chile
+  tag Sodimac-Uruguay
+
+  tag deprecated {
+    color rgb(100 100 100)
+  }
 }

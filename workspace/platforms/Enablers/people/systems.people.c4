@@ -383,6 +383,8 @@ model {
     empleadoCentral -[usesApplication]-> spr
     empleadoCentral -[usesApplication]-> employeeCentralPayroll
     empleadoCentral -[usesApplication]-> aira
+    empleadoCentral -[usesApplication]-> File
+    empleadoCentral -[usesApplication]-> GD
   }
   adobeSign = system 'Adobe Sign'{
     #people

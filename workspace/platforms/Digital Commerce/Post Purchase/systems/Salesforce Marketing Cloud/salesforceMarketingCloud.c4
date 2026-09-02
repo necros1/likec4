@@ -1,0 +1,47 @@
+//systems.post-purchase.c4
+model {
+    /**********************************************************************
+        SYSTEMS - DIGITAL COMMERCE - POST PURCHASE
+    **********************************************************************/
+    
+        extend salesforceMarketingCloud {
+
+            emailStudio = container 'Email Studio' {
+                technology 'Salesforce Marketing Cloud Module'
+                description 'Creación y envío de correos electrónicos segmentados.'
+            }
+
+            journeyBuilder = container 'Journey Builder' {
+                technology 'Salesforce Marketing Cloud Module'
+                description 'Orquestación de ciclos de vida del cliente multi-canal.'
+            }
+
+            contactBuilder = container 'Contact Builder' {
+                technology 'Salesforce Marketing Cloud Module'
+                description 'Gestión de datos de contactos y relaciones entre extensiones de datos.'
+            }
+
+            contentBuilder = container 'Content Builder' {
+                technology 'Salesforce Marketing Cloud Module'
+                description 'Repositorio centralizado de activos y plantillas.'
+            }
+
+            marketingCloudAPI = container 'Marketing Cloud API' {
+                technology 'REST / SOAP API'
+                description 'Punto de entrada para integraciones externas.'
+            }
+
+            journeyBuilder -[uses]-> emailStudio 'Dispara envíos de emails'
+            journeyBuilder -[readsDataFrom]-> contactBuilder 'Consulta segmentos y atributos'
+            emailStudio -[fetchesAssetsFrom]-> contentBuilder 'Obtiene imágenes y plantillas'
+            marketingCloudAPI -[writesDataTo]-> contactBuilder 'Ingesta datos de sistemas externos'
+            marketingAnalyst -[managesContentIn]-> contentBuilder 'Crea activos de marca'
+            marketingAnalyst -[designsJourneysIn]-> journeyBuilder 'Configura flujos de automatización'
+            
+            // Conexiones de los sistemas del archivo post-purchase
+            coreOrder -[sendsEventsTo]-> marketingCloudAPI 'Informa estados de pedido vía API'
+            vtexCrateBarrel -[sendsDataTo]-> marketingCloudAPI 'Informa eventos de navegación'
+            salesforceServiceCloud -[syncsDataWith]-> contactBuilder 'Sincroniza perfiles mediante conector'
+            emailStudio -[sendsContentTo]-> customerNotifications 'Entrega contenido para envío'        
+    }
+}

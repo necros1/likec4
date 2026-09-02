@@ -2,14 +2,14 @@
 model {
 
     /**********************************************************************
-        Supply DOMAIN
+        Enterprise Support TI DOMAIN
     **********************************************************************/
 
-    supplyChain = capability {
-        title 'Supply'
+    enterpriseSupportTi = capability {
+        title 'Enterprise Support TI'
         metadata {
             // Parent 'Falabella Group'
-            Parent 'Core Business'
+            Parent 'Enterprise Support'
         }
     }
 
@@ -17,14 +17,29 @@ model {
         LEVEL 1 — ENTERPRISE CAPABILITY MAP
     **********************************************************************/
 
-    
+    contentServices = capability {
+        title 'Content Services'
+        metadata {
+            Parent 'Enterprise Support TI'
+        }
+    }
+
     /**********************************************************************
         LEVEL 2 — Content Services CAPABILITY MAP
     **********************************************************************/
 
-    
+    electronicSign = capability {
+        title 'Electronic Sign'
+        description 'Tools and procedures related to digitized identification and authorization to conduct business between the parties involved'
+        metadata {
+            Parent 'Content Services'
+        }
+    }
+
     /**********************************************************************
         STRUCTURAL RELATION (según metamodelo soportado)
     **********************************************************************/
 
+    enterpriseSupportTi -[containsCapability]-> contentServices "Contains Capability"
+    contentServices -[containsCapability]-> electronicSign "Contains Capability"
 }

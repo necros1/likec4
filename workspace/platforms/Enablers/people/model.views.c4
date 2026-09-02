@@ -20,6 +20,11 @@ views {
     //     wimper,
     //     ubits,
     //     muevete,
+    //     portalEmpleados,
+    //     degree,
+    //     wimper,
+    //     ubits,
+    //     muevete,
     //     trabajandoCom,
     //     rankmi,
     //     payroll,
@@ -64,6 +69,72 @@ views {
       include qualtrics, voiceOfEmployee
     }
 
+    view context of empleadoCentral {
+      title 'Platforms / Enablers / People / Empleado Central / C4 Level 1: System Context'
+      include empleadoCentral,spr,employeeCentralPayroll,File, GD, geoVictoria, aira
+    }
+
+    view empleadoCentralContainers of empleadoCentral {
+      title 'Platforms / Enablers / People / Empleado Central / C4 Level 2: Containers'
+      include *
+    }
+    view empleadoCentralComponentsApiDorg of empleadoCentral.apiApplication {
+      title 'Platforms / Enablers / People / Empleado Central / C4 Level 3: Components / ApiDorg'
+      include *
+    }
+
+
+    // view saba of saba {
+    //   title 'Enablers / People / Applications / SABA / Capabilities'
+    //   include saba, 
+    //   learning
+    // }
+    // view firmaElectronicaPersonalInterno of firmaElectronicaPersonalInterno {
+    //   title 'Enablers / People / Applications / Firma Electrónica Personal Interno / Capabilities'
+    //     trabajandoCom,
+    //     rankmi,
+    //     payroll,
+    //     getAbstract,
+    //     eClass,
+    //     sysnel,
+    //     nomiplus,
+    //     sorianaRelojControl,
+    //     moodle,
+    //     controlDeAsistencias,
+    //     chatbotCorporativoBella,
+    //     buk,
+    //     asistenteDeCalibracion,
+    //     administracionCartera,
+    //     datamace,
+    //     datapino,
+    //     diferencialEmpleadosCajasTottus,
+    //     intranetMiCasa,
+    //     ocupacionalSSO,
+    //     ofisisSmart,
+    //     spr,
+    //     planillaEjecutivos,
+    //     sprSaas,
+    //     nomina,
+    //     sprWeb,
+    //     empleadoCentral,
+    //     adobeSign,
+    //     gestorDocumentosCorporativoHyland,
+    //     geoVictoria,
+    //     employeeCentralPayroll,
+    //     aira 
+    //   // include *,
+    // }
+
+
+    // view relojbiometricoSpr of relojbiometricoSpr {
+    //   title 'Platforms / Enablers / People / Reloj biometrico SPR / Capabilities'
+    //   include relojbiometricoSpr, timeAndAttendance
+    // }
+    // view qualtrics of qualtrics {
+    //   title 'Platforms / Enablers / People / Qualtrics / Capabilities'
+    //   include qualtrics, voiceOfEmployee
+    // }
+
     // view saba of saba {
     //   title 'Enablers / People / Applications / SABA / Capabilities'
     //   include saba, 
@@ -85,14 +156,29 @@ views {
     //   payrollCapability
     // }
     // view relojesMarcadoresPe of relojesMarcadoresPe {
+    //   include firmaElectronicabyFalabella, 
+    //   erm
+    // }
+    // view portalBeneficios of portalBeneficios {
+    //   title 'Enablers / People / Applications / Portal Beneficios / Capabilities'
     //   title 'Enablers / People / Applications / Relojes Marcadores PE / Capabilities'
     //   include relojesMarcadoresPe, 
     //   timeAndAttendance
+    //   include firmaElectronicabyFalabella, 
+    //   erm
+    // }
+    // view portalBeneficios of portalBeneficios {
+    //   title 'Enablers / People / Applications / Portal Beneficios / Capabilities'
     // }
     // view miFalabella of miFalabella {
     //   title 'Enablers / People / Applications / Relojes Marcadores PE / Capabilities'
     //   include miFalabella, 
     //   erm
+    //   include firmaElectronicabyFalabella, 
+    //   erm
+    // }
+    // view portalBeneficios of portalBeneficios {
+    //   title 'Enablers / People / Applications / Portal Beneficios / Capabilities'
     // }
     // view firmaElectronicabyFalabella of firmaElectronicabyFalabella {
     //   title 'Enablers / People / Applications / Firma Electronica by Falabella / Capabilities'
@@ -108,6 +194,9 @@ views {
     //   title 'Enablers / People / Applications / Payflow / Capabilities'
     //   include payflow, 
     //   payrollCapability
+
+    // view contextEmpleadoCentral of empleadoCentral {
+    //   // title 'Modelo C1 Sistema Motor de contactabilidad'
     // }
 
     // view haciendoEscuela of haciendoEscuela {
@@ -136,7 +225,7 @@ views {
     //   include degree, 
     //   learning
     // }
-    // view wimper of wimper {
+    // view wimper of wimper {http://localhost:5173/
     //   title 'Enablers / People / Applications / Wimper / Capabilities'
     //   include wimper, 
     //   learning, payrollCapability
@@ -155,4 +244,5 @@ views {
       
     // }
 
+   
 }

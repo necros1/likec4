@@ -1,66 +1,99 @@
 model {
     extend empleadoCentral {
-        container Empleado_Central {
-            technology 'SAP'
+        container apiApplication "API Application" {
+            description 'Maestro de Empleado'
+            technology: "nodejs"
             style {
-                border dotted
+                icon tech:nodejs
+                size xsmall
+                color sky
             }
             component ApiMemp {
                 description 'Maestro de Empleado'
-                    style {
-                        icon tech:nodejs
-                        size xsmall
-                        color sky
-                    }
+                technology: "nodejs"
+                style {
+                    icon tech:nodejs 
+                    size xsmall
+                    color sky
+                }
             }
+
             component ApiDorg {
                 description 'Diseño Organizacional'
-                    style {
-                        icon tech:nodejs 
-                        size xsmall
-                        color sky
-                    }
+                technology: "nodejs"
+                style {
+                    icon tech:nodejs 
+                    size xsmall
+                    color sky
+                }
             }
-            component HCI {
-                description 'Centro Integtraciones'
-                    style {
-                        color sky
-                        size xsmall
-                    }
+            signinController = component "Sign In Controller" {
+                description: "Allows users to sign in to the Internet Banking System."
+                technology: "Spring MVC Rest Controller"
             }
-            component EventosEC {
-                description 'Eventos ABM'
-                    style {
-                        icon: gcp:pub-sub
-                        color sky
-                        shape queue
-                        size xsmall
-                        
-                    }
-            }
-            component MiGestion {
-                description 'Sitio web SAP'
-                    style {
-                        color sky
-                        size xsmall
-                        shape browser
-                        
-                    }
 
+            accountsSummaryController = component "Accounts Summary Controller" {
+                description: "Provides customers with a summary of their bank accounts."
+                technology: "Spring MVC Rest Controller"
             }
-            component Extractores {
-                description 'Extractores Archivos SODPE'
-                    style {
-                        color sky
-                        size xsmall
-                        icon tech:nodejs
-                    }
-
+            resetPasswordController = component "Reset Password Controller" {
+                description: "Allows users to reset their passwords with a single use URL."
+                technology: "Spring MVC Rest Controller"
+            }
+            securityComponent = component "Security Component" {
+                description: "Provides functionality related to signing in, changing passwords, etc."
+                technology: "Spring Bean"
+            }
+            mainframeBankingSystemFacade = component "Mainframe Banking System Facade" {
+                description: "A facade onto the mainframe banking system."
+                technology: "Spring Bean"
+            }
+            emailComponent = component "E-mail Component" {
+                description: "Sends e-mails to users."
+                technology: "Spring Bean"
             }
         }
+        
+        container HCI {
+            description 'Centro Integtraciones'
+                style {
+                    color sky
+                    size xsmall
+                }
+        }
+        container EventosEC {
+            description 'Eventos ABM'
+                style {
+                    icon: gcp:pub-sub
+                    color sky
+                    shape queue
+                    size xsmall
+                    
+                }
+        }
+        container MiGestion {
+            description 'Sitio web SAP'
+                style {
+                    color sky
+                    size xsmall
+                    shape browser
+                    
+                }
+
+        }
+        container Extractores {
+            description 'Extractores Archivos SODPE'
+                style {
+                    color sky
+                    size xsmall
+                    icon tech:nodejs
+                }
+
+        }
     }
+
     GW -> ApiMemp 'HTTPS/OAUTH2'
-    GW -> ApiDorg 'HTTPS/OAUTH2'
+    // GW -> ApiDorg 'HTTPS/OAUTH2' 
     ApiMemp -> spr 'Personas [JODBC]'
     empleadoCentral -> employeeCentralPayroll 'Sync [P2P]'
     HCI -> File 'Archivos - Beneficios'

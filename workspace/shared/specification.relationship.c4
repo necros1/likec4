@@ -1,0 +1,59 @@
+specification {
+  relationship containsCapability
+  relationship supportsCapability {
+    line solid
+    color blue // Azul profundo para soporte tecnológico
+  }
+
+  relationship usesApplication
+  relationship sendsNotificationsTo {
+    line dashed
+  }
+  relationship triggersEventsTo {
+    line dashed
+    color blue   // Azul para eventos
+  }
+  relationship syncsCustomerDataWith {
+    line dashed
+    color blue   // Azul para sincronización de datos
+  }
+  relationship sendsOrderUpdatesTo {
+    line dashed
+    color blue   // Azul para actualizaciones de pedidos
+  }
+  relationship sendsContentTo {
+    line dashed
+    color blue   // Azul para envío de contenido
+  }
+  relationship providesCampaignHistoryTo {
+    line dashed
+    color blue   // Azul para provisión de historial de campañas
+  }
+  relationship sendsCommunicationsTo {
+    line dashed
+    color blue   // Azul para envío de comunicaciones
+  }
+  relationship manages {
+    line dashed
+    color blue   // Azul para gestión de campañas
+  }
+  relationship interactsWith {
+    line dashed
+    color blue   // Azul para interacciones del cliente
+  }
+  relationship viewsHistoryIn {
+    line dashed
+    color blue   // Azul para visualización de historial
+  }
+  relationship uses
+  relationship readsDataFrom
+  relationship fetchesAssetsFrom
+  relationship writesDataTo
+  relationship managesContentIn
+  relationship designsJourneysIn
+  relationship sendsEventsTo
+  relationship sendsDataTo
+  relationship syncsDataWith
+
+  
+}

@@ -41,7 +41,111 @@ views {
          color gray
          opacity 20%
          border solid
+         
          include vtexCrateBarrel -[supportsCapability]-> *
+      }
+    }
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - Libro de Reclamaciones
+    ********************************************************************************************************/
+    view libroReclamaciones_Supports_Capabilities of libroReclamaciones {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / Libro de Reclamaciones / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         
+         include libroReclamaciones -[supportsCapability]-> *
+      }
+    }
+
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - Zoho.com
+    ********************************************************************************************************/
+    view zohoCom_Supports_Capabilities of zohoCom {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / Zoho.com / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         
+         include zohoCom -[supportsCapability]-> *
+      }
+    }
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - Salesforce Marketing Cloud
+    ********************************************************************************************************/
+    // view salesforceMarketingCloud_Supports_Capabilities of salesforceMarketingCloud {
+    //   title 'Platforms / Digital Commerce / Post Purchase / Systems / Salesforce Marketing Cloud / Supports Capabilities'
+    //   group 'Post Purchase'{
+    //      color gray
+    //      opacity 20%
+    //      border solid
+         
+    //      include salesforceMarketingCloud -[supportsCapability]-> *
+    //   }
+    // }
+
+    view salesforceMarketingCloud_Context of salesforceMarketingCloud {
+        title 'Platforms / Digital Commerce / Post Purchase / Systems / Salesforce Marketing Cloud / C4 Level 1: System Context'
+        
+        // Incluye el sistema central
+        include salesforceMarketingCloud
+        
+        // Incluye los actores
+        include retailCustomer, marketingAnalyst
+        
+        // Incluye los sistemas específicos del archivo systems.post-purchase.c4
+        include vtexCrateBarrel, salesforceServiceCloud, coreOrder, customerNotifications, myAccount
+        
+        // Opcional: Auto-layout dinámico para mostrar todas las relaciones de los elementos incluidos
+        autoLayout BottomTop
+    }
+
+    view sfmc_Containers of salesforceMarketingCloud {
+        title 'Platforms / Digital Commerce / Post Purchase / Systems / Salesforce Marketing Cloud / C4 Level 2: Containers'
+        
+        // Incluye los contenedores internos
+        include salesforceMarketingCloud.emailStudio
+        include salesforceMarketingCloud.journeyBuilder
+        include salesforceMarketingCloud.contactBuilder
+        include salesforceMarketingCloud.contentBuilder
+        include salesforceMarketingCloud.marketingCloudAPI
+        
+        // Incluye los actores y sistemas externos para dar contexto
+        include marketingAnalyst, retailCustomer
+        include coreOrder, vtexCrateBarrel, salesforceServiceCloud, customerNotifications
+        
+        // Ordenamos la vista para que los externos queden en la periferia
+         autoLayout BottomTop
+    }
+
+
+
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - SAPF
+    ********************************************************************************************************/
+    view sapf_Supports_Capabilities of sapf {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / SAPF / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         
+         include sapf -[supportsCapability]-> *
+      }
+    }
+    /********************************************************************************************************
+        SYSTEM VIEWS - DIGITAL COMMERCE - POST PURCHASE - SYSTEMS - Cuadratura de precios ARS
+    ********************************************************************************************************/
+    view cuadraturaPreciosArs_Supports_Capabilities of cuadraturaPreciosArs {
+      title 'Platforms / Digital Commerce / Post Purchase / Systems / Cuadratura de precios ARS / Supports Capabilities'
+      group 'Post Purchase'{
+         color gray
+         opacity 20%
+         border solid
+         
+         include cuadraturaPreciosArs -[supportsCapability]-> *
       }
     }
 }

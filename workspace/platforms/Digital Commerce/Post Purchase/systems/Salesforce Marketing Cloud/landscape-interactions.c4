@@ -1,0 +1,36 @@
+model {
+    /**********************************************************************
+        ACTORES GLOBALES
+    **********************************************************************/
+    retailCustomer = actor 'Cliente Retail' {
+        description 'Persona que realiza compras y recibe comunicaciones.'
+    }
+
+    marketingAnalyst = actor 'Analista de Marketing' {
+        description 'Usuario interno que gestiona las campañas.'
+    }
+    /**********************************************************************
+        INTERACCIONES DE NIVEL 1 (CONTEXTO)
+    **********************************************************************/
+    
+    // --- Interacciones de los Actores ---
+    marketingAnalyst -[manages]-> salesforceMarketingCloud 'Configura campañas, segmentos y journeys'
+    salesforceMarketingCloud -[sendsCommunicationsTo]-> retailCustomer 'Envía Email, SMS y Notificaciones Push'
+    retailCustomer -[interactsWith]-> vtexCrateBarrel 'Realiza compras y navega productos'
+    retailCustomer -[viewsHistoryIn]-> myAccount 'Consulta historial de comunicaciones y pedidos'
+
+    // --- Interacciones entre Sistemas (Existentes) ---
+    vtexCrateBarrel -[triggersEventsTo]-> salesforceMarketingCloud 'Envía eventos de comportamiento'
+    salesforceServiceCloud -[syncsCustomerDataWith]-> salesforceMarketingCloud 'Sincroniza perfiles y preferencias'
+    coreOrder -[sendsOrderUpdatesTo]-> salesforceMarketingCloud 'Notifica cambios de estado de pedidos'
+    salesforceMarketingCloud -[sendsContentTo]-> customerNotifications 'Envía contenido para delivery final'
+    salesforceMarketingCloud -[providesCampaignHistoryTo]-> myAccount 'Muestra historial de comunicaciones'
+
+
+    /**********************************************************************
+        CONEXIONES NIVEL 2 CON EXTERNOS
+    **********************************************************************/
+        
+    salesforceMarketingCloud -[sendsCommunicationsTo]-> retailCustomer 'Email / SMS / Push'
+    
+}
