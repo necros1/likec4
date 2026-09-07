@@ -1,15 +1,147 @@
 deployment {
-  environment prod {
-    zone eu {
-      zone zone1 {
-        vm vm1
-        vm vm2
-      }
-      // You can also use '=' with the name coming first
-      zone2 = zone {
-        vm1 = vm
-        vm2 = vm
-      }
+    route53Node = route53 'Route 53'
+    clientHost = browser 'Client Host'
+
+    aws = awscloud 'AWS Cloud' {
+        usRegion = region 'United States Region (North Virginia)' {
+            vpc1 = vpc 'VPC' {
+                az1 = availabilityzone 'AZ1' {
+                    pubSubnet1 = subnetpublic 'Public subnet' {
+                        eni1 = eni 'ENI'
+                        natgw1 = natgateway 'NAT Gateway'
+                    }
+                }
+                az2 = availabilityzone 'AZ2' {
+                    pubSubnet2 = subnetpublic 'Public subnet' {
+                        eni2 = eni 'ENI'
+                        natgw2 = natgateway 'NAT Gateway'
+                    }
+                }
+                privateCompute = subnetprivate 'Private subnets (Multi-AZ)' {
+                    eksCluster = ekscluster 'EKS Cluster' {
+                        nodeGroupsSG = securitygroup 'Node Groups Security Group' {
+                            nodeGroupsAZ1 = ec2 'Node Groups AZ1'
+                            nodeGroupsAZ2 = ec2 'Node Groups AZ2'
+                        }
+                    }
+                }
+                rdsSubnetGroup = subnetprivate 'RDS Subnet Group' {
+                    rdsClusterNode = rdscluster 'RDS Cluster' {
+                        rdsProxyNode = rdsproxy 'RDS Proxy'
+                        rdsSG = securitygroup 'RDS Security Group' {
+                            rdsPrimary = rds 'RDS Primary Instance'
+                            rdsStandby = rds 'RDS Standby Instance'
+                            rdsReadReplica = rds 'RDS Read Replica'
+                        }
+                    }
+                }
+            }
+            albNode = alb 'ALB'
+            igwNode = internetgateway 'Internet Gateway'
+            routeTableNode = routetable 'Route Table'
+            routerNode = router 'Router'
+            gatewayVpcEndpoint = vpcendpoint 'Gateway VPC Endpoint'
+            sqsNode = sqs 'SQS'
+            eventBridgeNode = eventbridge 'EventBridge'
+            s3Spa = s3 'S3 Hosting SPA'
+            s3Videos = s3 'S3 for Educational Content (Videos)'
+            s3ClientData = s3 'S3 For Client Data'
+            cfSpa = cloudfront 'CloudFront - Frontend SPA'
+            cfVideos = cloudfront 'CloudFront - Educational Videos'
+        }
     }
-  }
+
+    oci = ocicloud 'Oracle Cloud' {
+        jeddah = ociregion 'Jeddah Region' {
+            ad1 = availabilitydomain 'AD1' {
+                vcnJeddah = vcn 'VCN' {
+                    pubSubnetJeddah = subnetpublic 'Public subnet' {
+                        vnicJeddah = vnic 'VNIC'
+                        lbJeddah = ociloadbalancer 'OCI Load Balancer'
+                    }
+                    privSubnetJeddah = subnetprivate 'Private subnet' {
+                        okeClusterJeddah = okecluster 'Jeddah OKE Cluster' {
+                            okeNodePoolSGJeddah = networksecuritygroup 'OKE Node Pools Network Security Group' {
+                                okeNodePoolJeddah = okenodepool 'OKE Node Pools'
+                            }
+                        }
+                        dbSGJeddah = networksecuritygroup 'DB Network Security Group' {
+                            mdsJeddah = mdsinstance 'MDS Instance'
+                        }
+                    }
+                }
+            }
+            natJeddah = ocinatgateway 'OCI NAT Gateway'
+            igwJeddah = ociinternetgateway 'OCI Internet Gateway'
+            sgwJeddah = ociservicegateway 'Service Gateway'
+            routeTableJeddah = routetable 'Route Table'
+            routerJeddah = ocirouter 'Router'
+            queueJeddah = ociqueueservice 'OCI Queue Service'
+            objStorageJeddah = ociobjectstorage 'OCI Object Storage for Client Data'
+        }
+
+        riyadh = ociregion 'Riyadh Region' {
+            ad1 = availabilitydomain 'AD1' {
+                vcnRiyadh = vcn 'VCN' {
+                    pubSubnetRiyadh = subnetpublic 'Public subnet' {
+                        vnicRiyadh = vnic 'VNIC'
+                        lbRiyadh = ociloadbalancer 'OCI Load Balancer'
+                    }
+                    privSubnetRiyadh = subnetprivate 'Private subnet' {
+                        okeClusterRiyadh = okecluster 'Riyadh OKE Cluster' {
+                            okeNodePoolSGRiyadh = networksecuritygroup 'OKE Node Pools Network Security Group' {
+                                okeNodePoolRiyadh = okenodepool 'OKE Node Pools'
+                            }
+                        }
+                        dbSGRiyadh = networksecuritygroup 'DB Network Security Group' {
+                            mdsRiyadh = mdsinstance 'MDS Instance'
+                        }
+                    }
+                }
+            }
+            natRiyadh = ocinatgateway 'OCI NAT Gateway'
+            igwRiyadh = ociinternetgateway 'OCI Internet Gateway'
+            sgwRiyadh = ociservicegateway 'Service Gateway'
+            routeTableRiyadh = routetable 'Route Table'
+            routerRiyadh = ocirouter 'Router'
+            queueRiyadh = ociqueueservice 'OCI Queue Service'
+            objStorageRiyadh = ociobjectstorage 'OCI Object Storage for Client Data'
+        }
+    }
+
+    // ---------- Relaciones ----------
+    clientHost -> route53Node '3 DNS Queries'
+    route53Node -> aws.usRegion.cfSpa 'DNS Query - Frontend Domain (S3 + CloudFront)'
+    route53Node -> aws.usRegion.cfVideos 'DNS Query - Video Subdomain (S3 + CloudFront)'
+    route53Node -> aws.usRegion.albNode 'DNS Query - Backend APIs (Geolocation: US)'
+    route53Node -> oci.jeddah.lbJeddah 'DNS Query - Backend APIs (Geolocation: KSA, weighted 50/50)'
+    route53Node -> oci.riyadh.lbRiyadh 'DNS Query - Backend APIs (Geolocation: KSA, weighted 50/50)'
+
+    aws.usRegion.cfSpa -> aws.usRegion.s3Spa
+    aws.usRegion.cfVideos -> aws.usRegion.s3Videos
+
+    aws.usRegion.albNode -> aws.usRegion.privateCompute.eksCluster.nodeGroupsSG.nodeGroupsAZ1
+    aws.usRegion.albNode -> aws.usRegion.privateCompute.eksCluster.nodeGroupsSG.nodeGroupsAZ2
+
+    aws.usRegion.privateCompute.eksCluster.nodeGroupsSG.nodeGroupsAZ1 -> aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsProxyNode
+    aws.usRegion.privateCompute.eksCluster.nodeGroupsSG.nodeGroupsAZ2 -> aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsProxyNode
+    aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsProxyNode -> aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsSG.rdsPrimary
+    aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsSG.rdsPrimary -> aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsSG.rdsStandby 'replication'
+    aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsSG.rdsPrimary -> aws.usRegion.rdsSubnetGroup.rdsClusterNode.rdsSG.rdsReadReplica 'replication'
+
+    aws.usRegion.privateCompute.eksCluster.nodeGroupsSG.nodeGroupsAZ2 -> aws.usRegion.gatewayVpcEndpoint
+    aws.usRegion.gatewayVpcEndpoint -> aws.usRegion.s3ClientData
+    aws.usRegion.sqsNode -> aws.usRegion.eventBridgeNode
+
+    oci.jeddah.lbJeddah -> oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.okeClusterJeddah.okeNodePoolSGJeddah.okeNodePoolJeddah
+    oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.okeClusterJeddah.okeNodePoolSGJeddah.okeNodePoolJeddah -> oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.dbSGJeddah.mdsJeddah
+    oci.jeddah.natJeddah -> oci.jeddah.sgwJeddah
+    oci.jeddah.sgwJeddah -> oci.jeddah.objStorageJeddah
+    oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.dbSGJeddah.mdsJeddah -> oci.jeddah.queueJeddah
+
+    oci.riyadh.lbRiyadh -> oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.okeClusterRiyadh.okeNodePoolSGRiyadh.okeNodePoolRiyadh
+    oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.okeClusterRiyadh.okeNodePoolSGRiyadh.okeNodePoolRiyadh -> oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.dbSGRiyadh.mdsRiyadh
+    oci.riyadh.natRiyadh -> oci.riyadh.sgwRiyadh
+    oci.riyadh.sgwRiyadh -> oci.riyadh.objStorageRiyadh
+    oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.dbSGRiyadh.mdsRiyadh -> oci.riyadh.queueRiyadh
 }

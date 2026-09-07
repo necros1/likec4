@@ -2,7 +2,7 @@
 views {
   view index {
     
-      title "Ecosistema Falabella"
+      title "Ecosistema de Soluciones"
 
       // group 'Supply Chain'{
       //   color green

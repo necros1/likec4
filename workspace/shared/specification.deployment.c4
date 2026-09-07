@@ -1,17 +1,10 @@
 specification {
-  deploymentNode environment
-  deploymentNode zone
-  deploymentNode kubernetes {
-    // Nodes have same styling options
-    style {
-      color blue
-      icon tech:kubernetes
-      multiple true
+    deploymentNode node
+    
+    deploymentNode onpremises
+    deploymentNode environment {
+        style {
+        color gray
+        }
     }
-  }
-  deploymentNode vm {
-    // Common properties for the kind
-    notation 'Virtual Machine'
-    technology 'VMware'
-  }
 }

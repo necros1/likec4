@@ -83,6 +83,46 @@ views {
       include *
     }
 
+    deployment view empleadoCentral {
+      title 'Platforms / Enablers / People / Empleado Central / Deployment - AWS'
+      include
+      clientHost,
+      route53Node,
+
+      aws.*,
+      aws.usRegion.*,
+      aws.usRegion.vpc1.*,
+      aws.usRegion.vpc1.az1.*,
+      aws.usRegion.vpc1.az1.pubSubnet1.*,
+      aws.usRegion.vpc1.az2.*,
+      aws.usRegion.vpc1.az2.pubSubnet2.*,
+      aws.usRegion.vpc1.privateCompute.*,
+      aws.usRegion.vpc1.privateCompute.eksCluster.*,
+      aws.usRegion.vpc1.privateCompute.eksCluster.nodeGroupsSG.*,
+      aws.usRegion.vpc1.rdsSubnetGroup.*,
+      aws.usRegion.vpc1.rdsSubnetGroup.rdsClusterNode.*,
+      aws.usRegion.vpc1.rdsSubnetGroup.rdsClusterNode.rdsSG.*,
+
+      oci.*,
+      oci.jeddah.*,
+      oci.jeddah.ad1.*,
+      oci.jeddah.ad1.vcnJeddah.*,
+      oci.jeddah.ad1.vcnJeddah.pubSubnetJeddah.*,
+      oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.*,
+      oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.okeClusterJeddah.*,
+      oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.okeClusterJeddah.okeNodePoolSGJeddah.*,
+      oci.jeddah.ad1.vcnJeddah.privSubnetJeddah.dbSGJeddah.*,
+
+      oci.riyadh.*,
+      oci.riyadh.ad1.*,
+      oci.riyadh.ad1.vcnRiyadh.*,
+      oci.riyadh.ad1.vcnRiyadh.pubSubnetRiyadh.*,
+      oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.*,
+      oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.okeClusterRiyadh.*,
+      oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.okeClusterRiyadh.okeNodePoolSGRiyadh.*,
+      oci.riyadh.ad1.vcnRiyadh.privSubnetRiyadh.dbSGRiyadh.*
+    }
+
 
     // view saba of saba {
     //   title 'Enablers / People / Applications / SABA / Capabilities'

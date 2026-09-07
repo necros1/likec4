@@ -1,0 +1,137 @@
+specification {
+  color aws-color rgb(35, 47, 62)
+
+  //******** TOP-LEVEL WRAPPER ********//
+  deploymentNode awscloud {
+    style {
+      icon tech:aws
+      color aws-color
+    }
+  }
+
+  //******** EDGE / CLIENT ********//
+  deploymentNode browser {
+    style {
+      shape browser
+      color gray
+    }
+  }
+  deploymentNode dnscloudflare {
+    style {
+      icon tech:cloudflare
+      color gray
+    }
+  }
+  deploymentNode route53 {
+    style {
+      icon aws:route-53
+      color amber
+    }
+  }
+  deploymentNode cloudfront {
+    style {
+      icon aws:cloud-front
+      color amber
+    }
+  }
+
+  //******** NETWORKING ********//
+  deploymentNode region {
+    style { color amber }
+  }
+  deploymentNode availabilityzone {
+    style { color amber }
+  }
+  deploymentNode vpc {
+    style {
+      icon aws:virtual-private-cloud
+    }
+  }
+  deploymentNode subnetpublic {
+    style { color green }
+  }
+  deploymentNode subnetprivate {
+    style { color blue }
+  }
+  deploymentNode natgateway {
+    style {  }
+  }
+  deploymentNode internetgateway {
+    style {  }
+  }
+  deploymentNode vpcendpoint {
+    style {  }
+  }
+  deploymentNode routetable {
+    style { color gray }
+  }
+  deploymentNode router {
+    style { color gray }
+  }
+  deploymentNode eni {
+    style {  }
+  }
+  deploymentNode securitygroup {
+    style { color red }
+  }
+  deploymentNode alb {
+    style {
+      icon aws:elastic-load-balancing
+      color amber
+    }
+  }
+
+  //******** COMPUTE / CONTAINERS ********//
+  deploymentNode ec2 {
+    style {
+      icon aws:ec2
+      color amber
+    }
+  }
+  deploymentNode ekscluster {
+    style {
+      icon aws:eks-cloud
+      color amber
+    }
+  }
+
+  //******** DATA / STORAGE ********//
+  deploymentNode rdscluster {
+    style {
+      icon aws:rds
+      color blue
+    }
+  }
+  deploymentNode rdsproxy {
+    style {
+      icon aws:rds
+      color blue
+    }
+  }
+  deploymentNode rds {
+    style {
+      icon aws:rds
+      color blue
+    }
+  }
+  deploymentNode s3 {
+    style {
+      icon aws:simple-storage-service
+      color blue
+    }
+  }
+
+  //******** INTEGRATION / MESSAGING ********//
+  deploymentNode sqs {
+    style {
+      icon aws:simple-queue-service
+     
+    }
+  }
+  deploymentNode eventbridge {
+    style {
+      icon aws:event-bridge
+     
+    }
+  }
+}

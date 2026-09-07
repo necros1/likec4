@@ -1,7 +1,7 @@
 {
   "servers": {
     "likec4": {
-      "type": "sse",
+      "type": "http",
       "url": "http://localhost:33335/mcp"
     }
   }
