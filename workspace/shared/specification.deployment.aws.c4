@@ -125,13 +125,11 @@ specification {
   deploymentNode sqs {
     style {
       icon aws:simple-queue-service
-     
     }
   }
   deploymentNode eventbridge {
     style {
       icon aws:event-bridge
-     
     }
   }
 }
