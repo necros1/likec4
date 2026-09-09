@@ -1,0 +1,57 @@
+model {
+    clienteempresa = actor 'Cliente Empresa'
+    appmovil = mobile 'App Movil'
+
+    extend banconexion {
+        container apache 'Apache'{
+            style {
+                icon tech:apache
+            }
+        }
+        container java 'Java'{
+            style {
+                icon tech:java
+            }
+        }
+        container oracle12c 'Oracle'{
+            style {
+                icon tech:oracle
+                color secondary
+                opacity 35%
+                shape storage
+                border none
+            }
+            metadata {
+                version '12c' 
+            }
+        }
+        container serviviobus11g 'Servicio bus 11g'{
+            style {
+                icon tech:oracle
+                color secondary
+                opacity 35%
+                shape queue
+                border none
+            }
+            metadata {
+                version '11g' 
+            }
+        }
+        container serviviobus12g 'Servicio bus 12g'{
+            style {
+                icon tech:oracle
+                color secondary
+                opacity 35%
+                shape queue
+                border none
+            }
+            metadata {
+                version '12g' 
+            }
+        }
+
+        
+    }
+    // ---------- Relaciones C1 ----------
+    
+}

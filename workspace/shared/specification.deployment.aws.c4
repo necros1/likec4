@@ -1,13 +1,4 @@
 specification {
-  color aws-color rgb(35, 47, 62)
-
-  //******** TOP-LEVEL WRAPPER ********//
-  deploymentNode awscloud {
-    style {
-      icon tech:aws
-      color aws-color
-    }
-  }
 
   //******** EDGE / CLIENT ********//
   deploymentNode browser {
@@ -16,12 +7,7 @@ specification {
       color gray
     }
   }
-  deploymentNode dnscloudflare {
-    style {
-      icon tech:cloudflare
-      color gray
-    }
-  }
+
   deploymentNode route53 {
     style {
       icon aws:route-53

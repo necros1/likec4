@@ -1,0 +1,11 @@
+specification {
+  
+  deploymentNode backuprestor {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/storage/back-up-restor.png
+    }
+  }
+  
+}

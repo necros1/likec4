@@ -1,0 +1,18 @@
+//systems.post-purchase.c4
+model {
+    /**********************************************************************
+        SYSTEMS - DIGITAL COMMERCE - POST PURCHASE
+    **********************************************************************/
+
+    banconexion = system 'Banconexion' {
+        #banco-digital #Agil
+        description ''
+        metadata {
+            Delivery ''
+            Codebase ''
+            Lifecycle ''
+        }
+    //   integraPlataformaAutogestion -[supportsCapability]-> learning "Supports"
+    }
+
+}

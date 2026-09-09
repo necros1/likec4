@@ -12,7 +12,21 @@ specification {
       textSize small
     }
   }
-
+  element oracle12c {
+    notation "Oracle 12c"
+    style {
+      icon tech:oracle
+      color secondary
+      opacity 35%
+      shape storage
+      border none
+    }
+  }
+  element mobile {
+    style {
+      shape mobile
+    }
+  }
   element actor {
     notation "Person, Customer"
     style {

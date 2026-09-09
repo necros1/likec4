@@ -1,0 +1,94 @@
+specification {
+  
+  deploymentNode blockchain {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/blockchain.png
+    }
+  }
+  deploymentNode cloudenativeenviroment {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/cloude-native-enviroment.png
+    }
+  }
+  deploymentNode contentdeliverynetworkservice {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/content-delivery-network-service.png
+    }
+  }
+  deploymentNode crossdomain {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/cross-domain.png
+    }
+  }
+  deploymentNode dataintegrator {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/data-integrator.png
+    }
+  }
+  deploymentNode internet {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/internet.png
+    }
+  }
+  deploymentNode iot {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/iot.png
+    }
+  }
+  deploymentNode ocimulticloud {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/oci-multicloud.png
+    }
+  }
+  deploymentNode otheroraclecloudservice {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/other-oracle-cloud-service.png
+    }
+  }
+  deploymentNode privatecloud {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/privatecloud.png
+    }
+  }
+  deploymentNode remoteagent {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/remote-agent.png
+    }
+  }
+  deploymentNode transactionmanager {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/transaction-manager.png
+    }
+  }
+  deploymentNode zerodatalossrecoveryappliance {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/other/zero-data-loss-recovery-appliance.png
+    }
+  }
+}

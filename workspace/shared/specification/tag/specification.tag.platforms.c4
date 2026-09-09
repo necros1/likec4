@@ -1,0 +1,10 @@
+//specification.tag.fai.c4
+specification {
+  tag Agil
+  tag banco-digital
+
+  // tag deprecated {
+  //   color rgb(56, 28, 28)
+  // }
+
+}

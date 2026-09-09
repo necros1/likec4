@@ -1,0 +1,73 @@
+specification {
+  deploymentNode autoscaling {
+    style {  
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/autoscaling.png
+    }
+  }
+  deploymentNode burstablevm {
+    style { 
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/burstable-vm.png
+    }
+  }
+  deploymentNode flexvm {
+    style {  
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/flex-vm.png
+    }
+  }
+  deploymentNode instancepools {
+    style { 
+      color blue
+      iconSize large 
+      icon ../../../assets/oci/compute/instance-pools.png
+    }
+  }
+  deploymentNode ocicompute {
+    style { 
+      color blue
+      iconSize large 
+      icon ../../../assets/oci/compute/oci-compute.png
+    }
+  }
+  deploymentNode ocifunctions {
+    style { 
+      color blue
+      iconSize large 
+      icon ../../../assets/oci/compute/oci-functions.png
+    }
+  }
+  deploymentNode virtualmachineapplication {
+    style {  
+      color blue
+      iconSize large 
+      icon ../../../assets/oci/compute/virtual-machine-application.png
+    }
+  }
+  deploymentNode virtualmachinegeneric {
+    style { 
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/virtual-machine-generic.png
+    }
+  }
+  deploymentNode virtualmachinegpu {
+    style {  
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/virtual-machine-gpu.png
+    }
+  }
+  deploymentNode virtualmachine {
+    style {
+      color blue 
+      iconSize large 
+      icon ../../../assets/oci/compute/virtual-machine.png
+    }
+  }
+  
+}

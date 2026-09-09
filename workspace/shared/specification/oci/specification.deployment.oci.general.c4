@@ -15,38 +15,10 @@ specification {
     style { color oci-color }
   }
 
-  //******** COMPUTE  ********//
-  deploymentNode ocicompute {
-    style { color blue }
-  }
-  deploymentNode instancepools {
-    style { color blue }
-  }
-  deploymentNode ocifunctions {
-    style { color blue }
-  }
-  deploymentNode virtualmachine {
-    style {color blue }
-  }
-  deploymentNode autoscaling {
-    style {  color blue }
-  }
-  deploymentNode flexvm {
-    style {  color blue }
-  }
-  deploymentNode burstablevm {
-    style { color blue }
-  }
-  deploymentNode virtualmachinegpu {
-    style {  color blue }
-  }
-  deploymentNode virtualmachineapplication {
-    style {  color blue; iconSize large }
-  }
-  deploymentNode virtualmachinegeneric {
-    style { color blue }
-  }
 
+
+
+  
   //******** CONTAINERS (OKE)  ********//
   deploymentNode okecluster {
     style { }
