@@ -53,5 +53,6 @@ model {
         
     }
     // ---------- Relaciones C1 ----------
-    
+    clienteempresa -> appmovil ""
+    appmovil -> banconexion ""
 }
