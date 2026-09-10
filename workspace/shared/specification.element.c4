@@ -1,6 +1,13 @@
 //specification.element.c4
 specification {
-
+  element externalSystem {
+    notation "Sistema Externo"
+    style {
+      color muted
+      opacity 15%
+    }
+  }
+  
   element capability {
     notation "Capacidad de Negocio"
     style {
@@ -72,4 +79,36 @@ specification {
     }
   }
   element container
+
+  element webserver {
+    notation "Web Server"
+    style {
+      color secondary
+      shape rectangle
+      border none
+    }
+  }
+  element esb {
+    notation "Enterprise Service Bus"
+    style {
+      shape queue
+      color secondary
+      opacity 20%
+    }
+  }
+  element idg {
+    notation "Identity Gateway"
+    style {
+      color secondary
+      opacity 20%
+    }
+  }
+
+
+  element mobileApp {
+    notation 'Mobile App'
+    style {
+      shape mobile
+    }
+  }
 }

@@ -1,58 +1,158 @@
 model {
-    clienteempresa = actor 'Cliente Empresa'
-    appmovil = mobile 'App Movil'
 
-    extend banconexion {
-        container apache 'Apache'{
-            style {
-                icon tech:apache
-            }
-        }
-        container java 'Java'{
-            style {
-                icon tech:java
-            }
-        }
-        container oracle12c 'Oracle'{
-            style {
-                icon tech:oracle
-                color secondary
-                opacity 35%
-                shape storage
-                border none
-            }
-            metadata {
-                version '12c' 
-            }
-        }
-        container serviviobus11g 'Servicio bus 11g'{
-            style {
-                icon tech:oracle
-                color secondary
-                opacity 35%
-                shape queue
-                border none
-            }
-            metadata {
-                version '11g' 
-            }
-        }
-        container serviviobus12g 'Servicio bus 12g'{
-            style {
-                icon tech:oracle
-                color secondary
-                opacity 35%
-                shape queue
-                border none
-            }
-            metadata {
-                version '12g' 
-            }
-        }
+  clienteempresa = actor 'Cliente Empresa'
 
-        
+  extend banconexion {
+
+    mobileApp = mobileApp "Mobile App"
+
+    webserver = webserver "Apache HTTP Server" {
+      description "Punto de entrada web al ambiente Banconexion."
+      style {
+        icon tech:apache
+      }
+      technology "Apache"
     }
-    // ---------- Relaciones C1 ----------
-    clienteempresa -> appmovil ""
-    appmovil -> banconexion ""
+
+    WebLogic = container "WebLogic" {
+      description "Servidores de aplicaciones WebLogic que hospedan las aplicaciones Java de Banconexion y EluEmpresa."
+      style {
+        icon tech:oracle
+      }
+      technology "Oracle"
+
+      weblogic12 = component 'Java sobre Weblogic12c (Banconexion)' {
+        description "Aplicación principal Banconexion; orquesta las consultas hacia BANCONEXIONAPP, NVA_INT_EMPRESAS y los servicios del bus."
+        style {
+          icon tech:oracle
+        }
+        technology "Java, Oracle WebLogic 12c"
+      }
+
+      weblogicEluEmpresa = component 'Java sobre Weblogic12c (EluEmpresa)' {
+        description "Aplicación Weblogic que administra el dominio EluEmpresa."
+        style {
+          icon tech:oracle
+        }
+        technology "Java, Oracle WebLogic 12c"
+      }
+
+      weblogic11 = component 'Java sobre Weblogic 11g (ILCAT)' {
+        description "Aplicación intermedia que consulta el catálogo ILCAT."
+        style {
+          icon tech:oracle
+        }
+        technology "Java, Oracle WebLogic 11g"
+      }
+    }
+
+    esb = esb "Enterprise Service Bus" {
+      description "Bus de integración que enruta las llamadas de servicio hacia los sistemas backend del banco."
+      style {
+        icon tech:oracle
+        color secondary
+        opacity 20%
+      }
+      technology "Oracle"
+
+      esbValidarDispositivo11g = component 'Servicio Bus 11g' {
+        description "CS001176_ValidarDispositivoSeguridad"
+        technology "Oracle Service Bus 11g"
+      }
+      esbValidarDispositivo12c = component 'Servicio Bus 12c' {
+        description "SRV.001541_1.0.ValidarDispositivoSeguridad"
+        technology "Oracle Service Bus 12c"
+      }
+      esbAutenticacion11g = component 'Servicio Bus 11g' {
+        description "CS000340_AutenticacionUsuario"
+        technology "Oracle Service Bus 11g"
+      }
+      esbCartolaTef11g = component 'Servicio Bus 11g' {
+        description "CS003001_CartolaTEF"
+        technology "Oracle Service Bus 11g"
+      }
+      esbFichaCliente11g = component 'Servicio Bus 11g' {
+        description "CS000191_ObtenerDatosFichaChica / CS001026_ConsultaProductoCliente"
+        technology "Oracle Service Bus 11g"
+      }
+      esbConsultaNombres12c = component 'Servicio Bus 12c' {
+        description "SRV.000136_1.0.BCH.NEG.Clientes.ConsultaNombresClientes"
+        technology "Oracle Service Bus 12c"
+      }
+      esbSaldoCuenta11g = component 'Servicio Bus 11g' {
+        description "CS000069_ConsultaSaldoCuenta / CS000072_ConsultasCartolaCuenta"
+        technology "Oracle Service Bus 11g"
+      }
+      esbPerfilUsuario12c = component 'Servicio Bus 12c' {
+        description "SRV.000046_1.0.BCH.NEG.Seguridad.ObtenerPerfilUsuario"
+        technology "Oracle Service Bus 12c"
+      }
+      esbValidarClave12c = component 'Servicio Bus 12c' {
+        description "SRV.000155_1.0.BCH.NEG.Seguridad.ValidarUsuarioClavePublico"
+        technology "Oracle Service Bus 12c"
+      }
+    }
+
+    // ---------- Bases de datos internas de Banconexion ----------
+    dbBanconexionApp = database "BANCONEXIONAPP" { technology "Oracle 12c" icon tech:oracle }
+    dbNvaIntEmpresas = database "NVA_INT_EMPRESAS" { technology "Oracle 12c" icon tech:oracle }
+    dbEluEmpresa = database "ELUEMPRESA" { technology "Oracle 12c" icon tech:oracle }
+    dbIlcat = database "ILCAT" { technology "Oracle 11g" icon tech:oracle }
+    dbRbacCn = database "RBAC_CN" { technology "Oracle 12c" icon tech:oracle }
+
+    // ---------- Sistemas backend externos al ESB ----------
+    ap0045Idg = idg "AP0045_IDG Autenticación robusta" {
+      description "Servicio de autenticación robusta."
+    }
+    ibmOndemand = externalSystem "IBM Ondemand"
+    ap0500TefMaze = externalSystem "AP0500_TEF Maze"
+    ap0482Mdm = externalSystem "AP0482_MDM"
+    ap0035CoreCuenta = externalSystem "AP0035_Core Cuenta Corriente"
+    apXxOud = externalSystem "AP_XX_Oracle Unified Directory"
+  }
+
+  // ---------- C4 Level 1: System Context ----------
+  clienteempresa -> banconexion "Usa"
+
+  // ---------- C4 Level 2: Containers ----------
+    clienteempresa -> mobileApp "Usa"
+    mobileApp -> webserver "Accede vía"
+    webserver -> WebLogic "Redirige a"
+    WebLogic -> esb "Invoca servicios de"
+    WebLogic -> dbBanconexionApp "Lee y escribe en"
+    WebLogic -> dbNvaIntEmpresas "Lee y escribe en"
+    WebLogic -> dbEluEmpresa "Lee y escribe en"
+    esb -> ap0045Idg "Autentica con"
+
+  // ---------- C4 Level 3: Components (WebLogic) ----------
+  webserver -> weblogic12 "Redirige a"
+  webserver -> weblogicEluEmpresa "Redirige a"
+  
+  weblogic12 -> dbBanconexionApp "Lee y escribe en"
+  weblogic12 -> dbNvaIntEmpresas "Lee y escribe en"
+  weblogicEluEmpresa -> dbEluEmpresa "Lee y escribe en"
+
+  weblogic12 -> esbValidarDispositivo11g "Invoca"
+  weblogic12 -> esbValidarDispositivo12c "Invoca"
+  weblogic12 -> esbAutenticacion11g "Invoca"
+  weblogic12 -> esbCartolaTef11g "Invoca"
+  weblogic12 -> esbFichaCliente11g "Invoca"
+  weblogic12 -> esbConsultaNombres12c "Invoca"
+  weblogic12 -> esbSaldoCuenta11g "Invoca"
+  weblogic12 -> esbPerfilUsuario12c "Invoca"
+  weblogic12 -> esbValidarClave12c "Invoca"
+
+  esbValidarDispositivo11g -> weblogic11 "Delega en"
+  esbValidarDispositivo12c -> weblogic11 "Delega en"
+  weblogic11 -> dbIlcat "Consulta"
+
+  // ---------- C4 Level 3: Components (ESB) ----------
+  esbAutenticacion11g -> ap0045Idg "Invoca"
+  esbCartolaTef11g -> ibmOndemand "Invoca"
+  esbCartolaTef11g -> ap0500TefMaze "Invoca"
+  esbFichaCliente11g -> ap0482Mdm "Invoca"
+  esbConsultaNombres12c -> ap0482Mdm "Invoca"
+  esbSaldoCuenta11g -> ap0035CoreCuenta "Invoca"
+  esbPerfilUsuario12c -> dbRbacCn "Consulta"
+  esbValidarClave12c -> apXxOud "Valida usuario/clave en"
 }
